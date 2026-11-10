@@ -3,7 +3,7 @@
 All notable changes to Propellant for Office are recorded here. The project follows semantic
 versioning.
 
-## Unreleased
+## 1.0.0 (2026-11-10)
 
 The first release.
 
