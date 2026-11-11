@@ -11,14 +11,47 @@ permissions:
 jobs:
   templates:
     name: Tests and build
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: '3.13'
       - run: python3 -m pip install -r requirements.txt
+      - name: Install LibreOffice to render the template previews
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends libreoffice-writer libreoffice-impress libreoffice-calc
+          soffice --version
+      - name: Install Lato and Oswald, pinned and checked
+        env:
+          FONTS_COMMIT: c30b221beb0c1da59d563feb91ec8656a1fa972a
+        run: |
+          mkdir -p "$HOME/.fonts"
+          cd "$HOME/.fonts"
+          base="https://raw.githubusercontent.com/google/fonts/$FONTS_COMMIT"
+          curl --fail --silent --show-error --location -o Lato-Regular.ttf "$base/ofl/lato/Lato-Regular.ttf"
+          curl --fail --silent --show-error --location -o Lato-Bold.ttf "$base/ofl/lato/Lato-Bold.ttf"
+          curl --fail --silent --show-error --location -o Lato-Italic.ttf "$base/ofl/lato/Lato-Italic.ttf"
+          curl --fail --silent --show-error --location -o Lato-BoldItalic.ttf "$base/ofl/lato/Lato-BoldItalic.ttf"
+          curl --fail --silent --show-error --location -o Oswald.ttf "$base/ofl/oswald/Oswald%5Bwght%5D.ttf"
+          sha256sum --check <<'SUMS'
+          d636e4683231f931eda222d588e944d082bfd3bdba02f928bee461c0f185b251  Lato-Regular.ttf
+          8a0aace75d33794eece4b28187bfc1df0bbd2888b5d8a56e01788c8d65d16be1  Lato-Bold.ttf
+          e399c44efe1387100531d26c7e4800c5d12251b890d6654a3098c7c679cb1786  Lato-Italic.ttf
+          62c1b7f0d2e74b45960154c3520efc337b553db0961bfdc950d5618334596cc8  Lato-BoldItalic.ttf
+          5b38c246e255a12f5712d640d56bcced0472466fc68983d2d0410ec0457c2817  Oswald.ttf
+          SUMS
+          fc-cache --force
       - run: python3 -m unittest discover -s tests
       - run: python3 scripts/build_templates.py
-      - name: Committed templates match the generator
+      - name: Committed templates and previews match the generator
         run: git diff --exit-code -- templates
+      - name: Keep the previews CI rendered, to compare with the committed ones
+        if: failure()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: rendered-previews
+          path: templates/previews
+          retention-days: 7

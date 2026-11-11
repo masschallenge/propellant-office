@@ -27,13 +27,15 @@ administrator can share them with everyone.
 
 ## Fonts
 
-| Font | Use it for |
-| --- | --- |
-| Lato | Everything: body text, headings, tables, labels and captions. |
-| Oswald | Only the big headline: a document title, a slide title or a sheet title. Always in capitals. |
+| Font | Use it for | Where |
+| --- | --- | --- |
+| Lato | All text: body text, headings, tables, labels and captions. On the web and in our products it is called Propellant Sans. | Documents, slides, sheets, email and product screens |
+| Oswald | Display headlines only: a document title, a slide title or a sheet title. Always in capitals. | Documents, slides, social graphics and public web pages. Never inside signed in product screens |
 
 Oswald is a narrow, condensed font. It is made for short, large headlines and is hard to read in
 long text, so never use it for paragraphs, bullets or table text.
+
+In email, Lato falls back to Arial, Helvetica, sans-serif for anyone who does not have it.
 
 ### Getting the fonts
 
@@ -65,35 +67,71 @@ file that someone else will open:
 
 ## Color
 
+The Propellant palette is the same everywhere: on the web, in Office and Google files, and in
+print.
+
+### The palette
+
+| Name | Hex | RGB | Print CMYK | Use it for |
+| --- | --- | --- | --- | --- |
+| Deep teal | `#044451` | 4 68 81 | 100 64 53 50 | Title slides, section slides, table headers, cover pages |
+| Teal | `#065E6F` | 6 94 111 | 100 55 45 24 | Links, actions and the first chart series |
+| Mid teal | `#068DA4` | 6 141 164 | 87 31 31 2 | A supporting accent for shapes and icons |
+| Bright teal | `#0FACBD` | 15 172 189 | 78 11 26 0 | Accents and large text on Deep teal |
+| Pale teal | `#D9F6FA` | 217 246 250 | 13 0 2 0 | Callout boxes and highlighted rows |
+| Mist | `#F3FBFC` | 243 251 252 | 3 0 1 0 | Alternate rows and quiet panels |
+| Magenta | `#BF0261` | 191 2 97 | 21 100 42 5 | Things that are wrong or late, used sparingly |
+| Yellow | `#FFC801` | 255 200 1 | 0 22 100 0 | Highlights, always with Ink text |
+| Ink | `#1E282B` | 30 40 43 | 81 66 63 83 | Body text and headings |
+| Slate | `#4B575B` | 75 87 91 | 73 57 55 35 | Secondary text |
+| White | `#FFFFFF` | 255 255 255 | 0 0 0 0 | Page and slide backgrounds |
+
+### Supporting neutrals
+
+Two grays from Propellant support the palette in lines and charts.
+
+| Name | Hex | RGB | Print CMYK | Use it for |
+| --- | --- | --- | --- | --- |
+| Gray 100 | `#DBE1E3` | 219 225 227 | 13 7 8 0 | Rules and table lines |
+| Gray 300 | `#848F92` | 132 143 146 | 53 38 39 4 | The sixth chart color, such as comparison data |
+
+The logo artwork has two colors of its own, Logo gray `#828486` (CMYK 53 44 43 7) and Logo teal
+`#17ACBC` (CMYK 77 11 27 0). Use them only in the logo, never for text, shapes or charts.
+
+### Printing
+
+The CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web
+coated), relative colorimetric intent, rounded to whole percent. Check a printed proof before a
+large run.
+
+### The theme
+
 Every template uses the Propellant theme. A theme is the set of twelve named colors and two fonts
 that Office and Google offer at the top of every color and font menu. Pick colors from the theme
 row, never from "More colors", and your file stays on brand even if the theme is updated later.
 
-| Theme slot | Name | Hex | Use it for |
-| --- | --- | --- | --- |
-| Dark 1 (text) | Ink | `#1E282B` | Body text and headings |
-| Light 1 (background) | White | `#FFFFFF` | Page and slide backgrounds |
-| Dark 2 | Deep teal | `#044451` | Title slides, section slides, table headers, cover pages |
-| Light 2 | Mist | `#F3F6F7` | Alternate rows and quiet panels |
-| Accent 1 | Teal | `#065E6F` | Links and the first chart series |
-| Accent 2 | Yellow | `#FFC801` | Highlights, always with Ink text, and the second chart series |
-| Accent 3 | Slate | `#4B575B` | Secondary text and the third chart series |
-| Accent 4 | Bright teal | `#0FACBD` | Accents on Deep teal and the fourth chart series |
-| Accent 5 | Deep teal | `#044451` | The fifth chart series |
-| Accent 6 | Gray | `#848F92` | Comparison data, such as last year |
-| Hyperlink | Teal | `#065E6F` | Links |
-| Followed hyperlink | Deep teal | `#044451` | Visited links |
+| Theme slot | Name | Hex |
+| --- | --- | --- |
+| Dark 1 (text) | Ink | `#1E282B` |
+| Light 1 (background) | White | `#FFFFFF` |
+| Dark 2 | Deep teal | `#044451` |
+| Light 2 | Mist | `#F3FBFC` |
+| Accent 1 | Teal | `#065E6F` |
+| Accent 2 | Yellow | `#FFC801` |
+| Accent 3 | Slate | `#4B575B` |
+| Accent 4 | Bright teal | `#0FACBD` |
+| Accent 5 | Deep teal | `#044451` |
+| Accent 6 | Gray 300 | `#848F92` |
+| Hyperlink | Teal | `#065E6F` |
+| Followed hyperlink | Deep teal | `#044451` |
 
-Two more brand colors sit outside the theme on purpose:
-
-- **Pale teal `#D9F6FA`** tints a callout box or a highlighted row.
-- **Mid teal `#068DA4`** is a supporting accent for shapes and icons.
-- **Magenta `#A30253`** means something is wrong or late. It is not in the theme so it never ends
-  up in a chart or a decoration by accident.
+Pale teal, Mid teal, Magenta and Gray 100 sit outside the theme on purpose. Magenta stays out so
+it never ends up in a chart or a decoration by accident.
 
 ### Using color
 
-- Most of the page is White, with Ink text. Color is an accent, not a background for everything.
+- Most of the page is White and the neutrals, with Ink text. Teals are for brand surfaces and
+  actions, and Magenta and Yellow are used only a little.
 - Use Deep teal for big brand moments: a title slide, a section divider, a cover. On Deep teal use
   White text and Bright teal accents, never Teal text.
 - Keep headings in Ink. Teal is for links and things people can click.
@@ -106,21 +144,23 @@ Two more brand colors sit outside the theme on purpose:
   | --- | --- | --- |
   | Ink | White, Mist or Pale teal | 13.3:1 or more |
   | Ink | Yellow | 9.7:1 |
-  | Slate | White or Mist | 6.9:1 or more |
-  | Teal | White | 7.4:1 |
+  | Slate | White or Mist | 7.1:1 or more |
+  | Teal | White or Mist | 7.0:1 or more |
+  | Magenta | White or Mist | 5.9:1 or more |
   | White | Deep teal | 10.8:1 |
   | White | Teal | 7.4:1 |
   | Bright teal | Deep teal | 3.9:1, so only for text 18 pt or larger |
 
-  Bright teal, Mid teal, Yellow and Gray are too light for text on White.
+  Bright teal, Mid teal, Yellow and Gray 300 are too light for text on White.
 
 ### Charts
 
 - A chart with one series uses Teal. Most charts need only one.
-- Charts take their colors from the theme in the order above, so do not recolor series by hand.
-- With two or more series, show the values or series names on the chart itself, not only in a
-  legend. Yellow, Bright teal and Gray are light against White, so labels are what make them
-  readable, and they help anyone who cannot tell the colors apart.
+- Charts take their colors from the theme in this order: Teal, Yellow, Slate, Bright teal, Deep
+  teal, Gray 300. Do not recolor series by hand.
+- Label the series directly on the chart, not only in a legend. Yellow, Bright teal and Gray 300
+  are light against White, so labels are what make them readable, and they help anyone who
+  cannot tell the colors apart.
 - Keep to four series or fewer. Fold the rest into Other, or split the chart.
 - Use one value axis. Two measures on different scales belong in two charts.
 - Never use Magenta for a series: it means something is wrong.
@@ -193,8 +233,8 @@ have the full logo rules.
 - **Leave space.** White space makes a page easier to read. Do not fill every corner.
 - **Align to the margins.** Line up text, images and charts on the same left edge.
 - **One idea per slide, one table per sheet, one purpose per document.**
-- **Round the corners of photos and panels** slightly, about 0.12 inch (3 mm), as the website does
-  with 12 pixels. Logos and charts stay square.
+- **Round the corners of photos and panels** slightly, about 0.12 inch (3 mm), the same as the 12
+  pixel corners on screen. Logos and charts stay square.
 - **Use real lists.** Use the bullet and numbering buttons, never typed dashes or asterisks.
 
 ## Writing
@@ -207,6 +247,39 @@ Documents sound like the rest of MassChallenge: bold and human, direct and plain
   "Applications".
 - Skip buzzwords such as leverage, seamless and robust, and skip exclamation marks.
 - Use commas, colons and periods. Do not use em dashes or en dashes.
+
+## About MassChallenge
+
+Anything that goes outside MassChallenge, such as a proposal, a report or a pitch deck, ends with
+a short About MassChallenge paragraph or slide. Quote one of these versions exactly. Use the short
+version on a slide and the medium or long version in a document.
+
+**Short**
+
+> Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit to solve the world's hardest challenges.
+
+**Medium**
+
+> Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit to solve the world's hardest challenges. What began in New England's innovation corridor is now a global network connecting startups, experts, and partners across industries and continents, all working to turn bold ideas into outcomes that matter.
+
+**Long**
+
+> Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit to solve the world's hardest challenges. What began in New England's innovation corridor is now a global network connecting startups, experts, and partners across industries and continents, all working to turn bold ideas into outcomes that matter. We are the earliest believer in founders tackling complex, regulated, and high-stakes problems, providing the infrastructure, access, and catalytic capital to move from proof to scale. Since 2009, MassChallenge has supported more than 5,000 startups across five Challenge Areas, helping them raise $16B+ in funding, create 90K jobs, and collaborate with more than 500 partners worldwide.
+
+The figures in the long version are as of November 2026. Show that date whenever you use a
+figure.
+
+Our primary line is "We back the rare humans with the grit to solve
+the toughest challenges." "It takes a community to raise a startup" is a founder's testimonial,
+not a MassChallenge line, so never use it as a tagline.
+
+## Contact and legal lines
+
+Use these lines in footers and on closing slides. The templates already carry them.
+
+- **Email:** contact@masschallenge.org
+- **Copyright:** © MassChallenge 2026, with the current year.
+- **No trademark symbol** on the MassChallenge name or logo.
 
 ## Accessibility
 

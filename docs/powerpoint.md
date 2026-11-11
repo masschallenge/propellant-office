@@ -41,6 +41,14 @@ place on every slide, and screen readers use the title placeholder to name each 
 Use Deep teal slides only for the title, section breaks and the closing slide. Everything in
 between is white, so the Deep teal moments stand out.
 
+## The closing slide
+
+The last sample slide closes the deck on Deep teal. It carries the presenter's name, email and
+next step, the short [About MassChallenge](foundations.md#about-masschallenge) line, and the
+contact and copyright lines: contact@masschallenge.org and © MassChallenge 2026. Keep the About
+line word for word, update the year when it changes, and never add a trademark symbol. A deck
+that goes outside MassChallenge ends with this slide.
+
 ## Titles
 
 - Make every title say the takeaway: "Applications grew in every program", not "Applications".

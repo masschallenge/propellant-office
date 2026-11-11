@@ -14,6 +14,19 @@ regular file (`.docx`, `.pptx`, `.xlsx`) for Google Workspace and for opening di
 Install [Lato and Oswald](foundations.md#getting-the-fonts) first, or Office will show other
 fonts.
 
+## What the templates carry
+
+- **Colors:** the Propellant theme, built from the [standard palette](foundations.md#the-palette),
+  with Mist `#F3FBFC` as Light 2 and the chart colors in the standard order: Teal, Yellow, Slate,
+  Bright teal, Deep teal, Gray 300. Table stripes are Mist and table lines are Gray 100 `#DBE1E3`.
+- **Fonts:** Lato for all text and Oswald capitals for titles, as
+  [the foundations](foundations.md#fonts) set out.
+- **Contact and legal lines:** the document footer reads "© MassChallenge 2026 |
+  contact@masschallenge.org | Page", and the closing slide of the presentation carries the same
+  email and copyright line under the short [About MassChallenge](foundations.md#about-masschallenge)
+  line. Neither uses a trademark symbol. The year comes from the build date in
+  `scripts/propellant_office/brand.py`, so update that date and rebuild when the year changes.
+
 ## For yourself
 
 ### Microsoft Office on Windows
@@ -62,8 +75,8 @@ These steps need an administrator.
 - **Fonts:** the same administrator can
   [publish Lato and Oswald as organization fonts](https://learn.microsoft.com/en-us/sharepoint/support-for-organization-fonts-in-powerpoint-for-the-web)
   so they work in PowerPoint and Word on every platform, including the web, without anyone
-  installing them. Both fonts are under the SIL Open Font License, but have the license checked
-  for cloud hosting first. Allow up to a day for both to appear.
+  installing them. Both fonts are free under the SIL Open Font License, which allows installing,
+  using and hosting them for any work. Allow up to a day for both to appear.
 - **Installing the fonts:** IT can also install Lato and Oswald on every managed computer.
 
 ### Google Workspace

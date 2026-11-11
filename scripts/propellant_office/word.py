@@ -8,7 +8,22 @@ from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
-from .brand import BODY_FONT, BUILD_DATE, DEEP_TEAL, DOCUMENT_STYLES, INK, LINE, LOGO_FILES, MIST, PALE_TEAL, SLATE, TEAL, WHITE
+from .brand import (
+    BODY_FONT,
+    BUILD_DATE,
+    CONTACT_EMAIL,
+    COPYRIGHT_LINE,
+    DEEP_TEAL,
+    DOCUMENT_STYLES,
+    GRAY_100,
+    INK,
+    LOGO_FILES,
+    MIST,
+    PALE_TEAL,
+    SLATE,
+    TEAL,
+    WHITE,
+)
 from .theme import as_template_package, brand_package_themes
 
 
@@ -89,13 +104,17 @@ def style_small_run(run, color=SLATE):
     run.font.color.rgb = RGBColor.from_string(color)
 
 
+def footer_text():
+    return f"{COPYRIGHT_LINE}  |  {CONTACT_EMAIL}  |  Page "
+
+
 def add_header_and_footer(document, logos):
     section = document.sections[0]
     header_paragraph = section.header.paragraphs[0]
     header_paragraph.add_run().add_picture(str(logos / LOGO_FILES["color"]), height=Inches(0.28))
     footer_paragraph = section.footer.paragraphs[0]
     footer_paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
-    style_small_run(footer_paragraph.add_run("MassChallenge  |  Page "))
+    style_small_run(footer_paragraph.add_run(footer_text()))
     add_page_number(footer_paragraph)
     style_small_run(footer_paragraph.runs[-1])
 
@@ -108,7 +127,7 @@ def add_sample_table(document):
         ("Cohort announced", "Communications", "May 5"),
     )
     table = document.add_table(rows=len(rows), cols=len(rows[0]))
-    set_table_borders(table, LINE)
+    set_table_borders(table, GRAY_100)
     for row_index, values in enumerate(rows):
         for column_index, value in enumerate(values):
             cell = table.cell(row_index, column_index)

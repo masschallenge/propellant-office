@@ -22,7 +22,9 @@ theme, use that instead. [Installing the templates](templates.md) explains both.
    **Apply layout**.
 
 Google does not publish a list of what changes when a PowerPoint file is converted. Check the
-title slide, a section slide and a content slide after converting.
+title slide, a section slide, a content slide and the closing slide after converting. The closing
+slide carries the short About MassChallenge line and the contact and copyright lines, as the
+[PowerPoint guide](powerpoint.md#the-closing-slide) explains.
 
 ## Slide size
 

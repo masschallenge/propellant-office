@@ -11,7 +11,18 @@ from pptx.opc.constants import RELATIONSHIP_TYPE
 from pptx.oxml.ns import qn
 from pptx.util import Inches, Pt
 
-from .brand import BRIGHT_TEAL, BUILD_DATE, DEEP_TEAL, INK, LOGO_FILES, SLATE, WHITE
+from .brand import (
+    BRIGHT_TEAL,
+    BUILD_DATE,
+    CONTACT_EMAIL,
+    COPYRIGHT_LINE,
+    DEEP_TEAL,
+    INK,
+    LOGO_FILES,
+    SHORT_BOILERPLATE,
+    SLATE,
+    WHITE,
+)
 from .theme import as_template_package, brand_package_themes, theme_file_package
 
 BASE_THEME = Path(pptx.__file__).parent / "templates" / "theme.xml"
@@ -227,6 +238,10 @@ def add_text_box(slide, text, left, top, width, height, size_pt, color, bold=Fal
     return box
 
 
+def closing_contact_line():
+    return f"{CONTACT_EMAIL}  |  {COPYRIGHT_LINE}"
+
+
 def add_sample_slides(presentation):
     layouts = presentation.slide_layouts
     title_slide = presentation.slides.add_slide(layouts[TITLE_SLIDE])
@@ -265,6 +280,8 @@ def add_sample_slides(presentation):
     closing = presentation.slides.add_slide(layouts[SECTION_HEADER])
     closing.shapes.title.text = "Thank you"
     closing.placeholders[1].text = "Your name, email and next step"
+    add_text_box(closing, SHORT_BOILERPLATE, Inches(MARGIN), Inches(5.2), Inches(10.5), Inches(0.9), 18, WHITE)
+    add_text_box(closing, closing_contact_line(), Inches(MARGIN), Inches(6.35), Inches(10.5), Inches(0.5), 18, BRIGHT_TEAL)
 
 
 def build_powerpoint_template(output_directory: Path, logos: Path):

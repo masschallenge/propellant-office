@@ -23,7 +23,7 @@ Google Sheets has its own theme for fonts and chart colors.
 1. Choose **Format**, then **Theme**.
 2. Choose **Customize** and set the font to **Lato**, the text color to Ink `#1E282B`, and the
    accents in the Propellant order: Teal `#065E6F`, Yellow `#FFC801`, Slate `#4B575B`, Bright
-   teal `#0FACBD`, Deep teal `#044451` and Gray `#848F92`. Set links to Teal `#065E6F`.
+   teal `#0FACBD`, Deep teal `#044451` and Gray 300 `#848F92`. Set links to Teal `#065E6F`.
 
 Charts and new tables then pick up the brand colors. If Lato is not in the font list, add it from
 **More fonts** in the toolbar's font menu first.
@@ -35,7 +35,7 @@ Charts and new tables then pick up the brand colors. If Lato is not in the font 
 | Sheet title | Oswald, 24 pt, Deep teal, typed in capitals |
 | Header row | Lato Bold, 11 pt, White on Deep teal `#044451` |
 | Cells | Lato, 11 pt, Ink |
-| Alternate rows | Mist `#F3F6F7` |
+| Alternate rows | Mist `#F3FBFC` |
 
 To get banded rows on new data, select it and choose **Format**, then **Alternating colors**, then
 set the header to Deep teal and the second color to Mist. You can also use **Format**, then

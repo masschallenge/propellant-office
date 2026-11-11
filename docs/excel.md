@@ -34,7 +34,7 @@ Charts and cell colors chosen from the theme switch over at once.
 | Description under the title | Lato, 11 or 12 pt, Slate |
 | Table header row | Lato Bold, 11 pt, White on Deep teal |
 | Cells | Lato, 11 pt, Ink |
-| Alternate rows | Mist fill, or none |
+| Alternate rows | Mist `#F3FBFC` fill, or none |
 
 Header text is in sentence case and includes the unit, such as Budget (USD) or Duration (days).
 
@@ -60,7 +60,7 @@ header colors, or keep the template formatting and turn off banded rows.
 - Show status with a word in its own column, such as On track, At risk or Late. Color can support
   the word, but never replace it.
 - For conditional formatting, use the Pale teal `#D9F6FA` fill for highlights and Yellow `#FFC801`
-  with Ink text for items that need attention. Keep Magenta `#A30253` for things that are wrong.
+  with Ink text for items that need attention. Keep Magenta `#BF0261` for things that are wrong.
 - Avoid data bars and icon sets in shared workbooks: they are hard to read and do not survive
   every export.
 
@@ -80,6 +80,9 @@ header colors, or keep the template formatting and turn off banded rows.
 - Set printing up front with **Page Layout**: landscape for wide tables, **Fit All Columns on One
   Page**, and the header row repeated with **Print Titles**.
 - Check accessibility with **Review**, then **Check Accessibility**.
+- For a workbook that goes outside MassChallenge, add © MassChallenge 2026 and
+  contact@masschallenge.org to the page footer with **Page Layout**, then **Print Titles**, then
+  **Header/Footer**.
 - Excel cannot embed fonts. People without Lato see a different font, so share a PDF when the
   look matters.
 

@@ -9,9 +9,15 @@ we publish. For photos that people upload into our products, such as a profile p
 [images and uploads guideline](https://github.com/masschallenge/propellant-web/blob/main/docs/images.md)
 also applies.
 
+## The photo library
+
+Start with the [photo library](https://propellant.masschallenge.org/brand/#photos) on the
+Propellant site. It holds MassChallenge's own photos for MassChallenge work, in four groups:
+community, founders at work, places and teal duotone.
+
 ## What our photos show
 
-Our website today is built around photos of the community: small teams working together at a
+Our photos center on the community: small teams working together at a
 whiteboard, founders networking at events, panel discussions, award moments on stage, and the
 Boston waterfront where we started. Follow the same direction.
 
@@ -81,25 +87,34 @@ no event photos of.
 
 ## Color treatment
 
-We use photos in two ways.
+We use photos in three ways.
 
 | Treatment | Use it for | How |
 | --- | --- | --- |
 | Natural color | News, event recaps, stories about real people, documentation | Keep the photo's natural color. Correct exposure and white balance only. |
-| Brand duotone | Large brand moments: a title slide, a cover, a campaign | Turn the photo to gray, then tint it from Deep teal `#044451` in the shadows to Pale teal `#D9F6FA` in the highlights. |
+| Teal duotone | Backgrounds behind text and section headers | Wash the photo in a gradient from Deep teal `#044451` to Bright teal `#0FACBD`. |
+| Hexagon network frame | Featuring a single photo as a graphic | Crop the photo to a circle and set it inside a Pale teal `#D9F6FA` network of hexagons and lines. |
 
-- Our website's large banner photos use a duotone like this, fading to solid teal on one side so
-  a headline can sit on it. Use the same idea on a title slide: duotone photo, with the title on
-  the darker side.
+- Use the teal duotone to put text on photos. Set the headline or section title in
+  White on the darker, Deep teal side.
+- The hexagon network frame is one of the brand's graphic devices. Keep the network in Pale
+  teal, and crop the circle on purpose, as the cropping rules below explain.
 - Never duotone a photo where the people's identity matters, such as a founder portrait or an
   award winner. People should look like themselves.
 - Do not apply filters, heavy vignettes, color casts or effects from phone apps.
 - Do not put text directly on a busy part of a photo. Use a calm area, or put the text on a Deep
   teal band or panel beside or over the photo.
 
-To make a duotone in PowerPoint, insert the photo, choose **Picture Format**, then **Color**, then
-**Grayscale**, and place a Deep teal rectangle over it with **Shape Format**, then **Shape Fill**,
-then about 40 percent transparency. A designer can make a more exact duotone in a photo editor.
+To make a teal duotone in PowerPoint, insert the photo, choose **Picture Format**, then **Color**,
+then **Grayscale**, and place a rectangle over it with **Shape Format**, then **Shape Fill**, then
+**Gradient**, from Deep teal to Bright teal at about 40 percent transparency. A designer can make a
+more exact duotone in a photo editor. The teal duotone group in the
+[photo library](https://propellant.masschallenge.org/brand/#photos) has finished examples.
+
+To crop a photo to a circle for the hexagon network frame, choose **Picture Format**, then
+**Crop**, then **Aspect Ratio**, then **1:1**, and then **Crop to Shape**, then **Oval**. The
+[brand guide](https://propellant.masschallenge.org/brand/#device-hexagon-frame) shows how the
+network sits around the photo.
 
 ## Cropping and placing photos
 
@@ -107,8 +122,8 @@ then about 40 percent transparency. A designer can make a more exact duotone in 
   knees), and leave the people looking or moving into the page, not out of it.
 - Never stretch or squash a photo. Resize it from a corner so it keeps its proportions.
 - Use one strong photo rather than several small ones. A collage of thumbnails is hard to read.
-- Round photo corners slightly, about 0.12 inch (3 mm), as the website does. Full bleed photos that
-  run to the edge of a slide stay square.
+- Round photo corners slightly, about 0.12 inch (3 mm), the same as the 12 pixel corners on
+  screen. Full bleed photos that run to the edge of a slide stay square.
 - Use photos that are large enough: at least 1920 pixels wide for a full slide, and at least 1200
   pixels wide for a half slide or a document page. A blurry photo looks careless.
 - Put the white logo on a dark, calm part of a photo, and the full color logo only on white.
@@ -150,9 +165,11 @@ show them whole, and crop only in the way the person chose.
 Before you use a photo or video, check:
 
 - [ ] We have permission from the people in it, or it is licensed stock with a record of the
-      source.
+      source. Photos from the library have their releases confirmed before use outside
+      MassChallenge channels.
 - [ ] It shows real people doing something, and it represents our community.
 - [ ] It is sharp, large enough and cropped on purpose.
-- [ ] It is natural color, or a brand duotone for a brand moment, with no filters.
+- [ ] It is natural color, a teal duotone behind text, or in the hexagon network frame, with no
+      filters.
 - [ ] Text and the logo sit on a calm area or a Deep teal panel.
 - [ ] It has alt text, and video has captions.
