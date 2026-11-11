@@ -225,6 +225,27 @@ class TemplatePreviews(unittest.TestCase):
                 previews.render_preview("soffice", Path("in.docx"), Path(tempfile.mkdtemp()) / "out.png")
         self.assertEqual(run.call_args.kwargs["timeout"], 120)
 
+    def test_renders_text_unhinted_in_grayscale_on_every_machine(self):
+        config = previews.RENDER_FONT_CONFIG.read_text("utf-8")
+        self.assertIn('<include ignore_missing="yes">/etc/fonts/fonts.conf</include>', config)
+        for setting in [
+            '<edit name="hinting" mode="assign"><bool>false</bool></edit>',
+            '<edit name="hintstyle" mode="assign"><const>hintnone</const></edit>',
+            '<edit name="antialias" mode="assign"><bool>true</bool></edit>',
+            '<edit name="rgba" mode="assign"><const>none</const></edit>',
+        ]:
+            self.assertIn(setting, config)
+        environment = previews.rendering_environment()
+        self.assertEqual(environment["FONTCONFIG_FILE"], str(previews.RENDER_FONT_CONFIG))
+        self.assertEqual(environment.get("PATH"), previews.os.environ.get("PATH"))
+
+    def test_renders_with_the_pinned_font_settings(self):
+        hang = previews.subprocess.TimeoutExpired(["soffice"], previews.CONVERSION_TIMEOUT_SECONDS)
+        with mock.patch.object(previews.subprocess, "run", side_effect=hang) as run:
+            with self.assertRaises(RuntimeError):
+                previews.render_preview("soffice", Path("in.docx"), Path(tempfile.mkdtemp()) / "out.png")
+        self.assertEqual(run.call_args.kwargs["env"]["FONTCONFIG_FILE"], str(previews.RENDER_FONT_CONFIG))
+
     def test_skips_quietly_without_libreoffice(self):
         with mock.patch.object(previews, "office_command", return_value=None):
             self.assertEqual(previews.render_previews(Path(tempfile.mkdtemp())), [])
