@@ -59,6 +59,12 @@ python3 -m unittest discover -s tests
 The build is reproducible: the same source always makes the same files, and the checks fail if the
 committed templates are out of date.
 
+When [LibreOffice](https://www.libreoffice.org) is installed, the build also renders a PNG of the
+first page or slide of each template into `templates/previews`, for the template gallery on
+[propellant.masschallenge.org](https://propellant.masschallenge.org). Without LibreOffice it skips
+that step and leaves the committed previews as they are. Install Lato and Oswald first, or the
+previews show substitute fonts.
+
 ## Contributing and security
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).

@@ -3,6 +3,7 @@ import sys
 import tempfile
 import unittest
 import zipfile
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -11,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from propellant_office.brand import BODY_FONT, HEADLINE_FONT, THEME_COLORS  # noqa: E402
 from propellant_office.excel import build_excel_template  # noqa: E402
 from propellant_office.powerpoint import build_powerpoint_template  # noqa: E402
+from propellant_office import previews  # noqa: E402
 from propellant_office.theme import brand_theme_xml, color_scheme_xml  # noqa: E402
 from propellant_office.word import build_word_template  # noqa: E402
 
@@ -112,6 +114,42 @@ class ThemeRewriting(unittest.TestCase):
         self.assertIn('name="Propellant"', branded)
         self.assertIn(color_scheme_xml(), branded)
         self.assertNotIn("windowText", branded)
+
+
+class TemplatePreviews(unittest.TestCase):
+    def test_names_each_preview_after_its_template(self):
+        self.assertEqual(previews.preview_name("word/propellant-document.docx"), "propellant-document.png")
+        names = {previews.preview_name(source) for source in previews.PREVIEW_SOURCES}
+        self.assertEqual(
+            names,
+            {"propellant-document.png", "propellant-presentation.png", "propellant-workbook.png"},
+        )
+
+    def test_previews_every_editable_template_that_is_committed(self):
+        for source in previews.PREVIEW_SOURCES:
+            self.assertTrue((ROOT / "templates" / source).exists(), source)
+
+    def test_converts_headlessly_with_a_private_profile(self):
+        arguments = previews.conversion_arguments("soffice", "in.docx", "out", "/tmp/profile")
+        self.assertEqual(arguments[0], "soffice")
+        self.assertIn("--headless", arguments)
+        self.assertIn("-env:UserInstallation=file:///tmp/profile", arguments)
+        self.assertEqual(arguments[-4:], ["png", "--outdir", "out", "in.docx"])
+
+    def test_skips_quietly_without_libreoffice(self):
+        with mock.patch.object(previews, "office_command", return_value=None):
+            self.assertEqual(previews.render_previews(Path(tempfile.mkdtemp())), [])
+
+    @unittest.skipUnless(previews.office_command(), "LibreOffice is not installed")
+    def test_renders_the_same_png_every_time(self):
+        source = ROOT / "templates" / previews.PREVIEW_SOURCES[1]
+        output = Path(tempfile.mkdtemp())
+        previews.render_preview(previews.office_command(), source, output / "first.png")
+        previews.render_preview(previews.office_command(), source, output / "second.png")
+        first = (output / "first.png").read_bytes()
+        self.assertTrue(first.startswith(b"\x89PNG\r\n\x1a\n"))
+        self.assertNotIn(b"tIME", first)
+        self.assertEqual(first, (output / "second.png").read_bytes())
 
 
 if __name__ == "__main__":
