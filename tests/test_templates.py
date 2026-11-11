@@ -181,7 +181,7 @@ class BrandStandards(unittest.TestCase):
             self.assertIn(f"`#{color.hex_value}`", row.group(0))
             self.assertIn(f"{red} {green} {blue}", row.group(0))
             self.assertIn(" ".join(str(part) for part in color.print_cmyk), row.group(0))
-        self.assertIn("Pantone matches are not set; print from the CMYK values", foundations)
+        self.assertNotIn("Pantone", foundations)
 
     def test_docs_quote_the_boilerplate_exactly_and_drop_retired_colors(self):
         for path in [*DOCS.glob("*.md"), ROOT / "README.md"]:
