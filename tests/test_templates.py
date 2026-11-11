@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from propellant_office.brand import (  # noqa: E402
     BODY_FONT,
+    BUILD_DATE,
     CHART_ORDER,
     CONTACT_EMAIL,
     COPYRIGHT_LINE,
@@ -168,7 +169,7 @@ class BrandStandards(unittest.TestCase):
         self.assertEqual(THEME_COLORS["lt2"], MIST)
 
     def test_copyright_line_has_no_trademark_symbol(self):
-        self.assertEqual(COPYRIGHT_LINE, "\u00a9 MassChallenge 2026")
+        self.assertEqual(COPYRIGHT_LINE, f"\u00a9 MassChallenge {BUILD_DATE.year}")
         self.assertIn(COPYRIGHT_LINE, footer_text())
 
     def test_foundations_list_every_color_with_hex_rgb_and_cmyk(self):
@@ -210,6 +211,19 @@ class TemplatePreviews(unittest.TestCase):
         self.assertIn("--headless", arguments)
         self.assertIn("-env:UserInstallation=file:///tmp/profile", arguments)
         self.assertEqual(arguments[-4:], ["png", "--outdir", "out", "in.docx"])
+
+    def test_explains_why_a_conversion_failed(self):
+        failure = previews.subprocess.CalledProcessError(1, ["soffice"], stderr="source file could not be loaded\n")
+        with mock.patch.object(previews.subprocess, "run", side_effect=failure):
+            with self.assertRaisesRegex(RuntimeError, "source file could not be loaded"):
+                previews.render_preview("soffice", Path("in.docx"), Path(tempfile.mkdtemp()) / "out.png")
+
+    def test_gives_up_on_a_conversion_that_hangs(self):
+        hang = previews.subprocess.TimeoutExpired(["soffice"], previews.CONVERSION_TIMEOUT_SECONDS)
+        with mock.patch.object(previews.subprocess, "run", side_effect=hang) as run:
+            with self.assertRaisesRegex(RuntimeError, "longer than 120 seconds"):
+                previews.render_preview("soffice", Path("in.docx"), Path(tempfile.mkdtemp()) / "out.png")
+        self.assertEqual(run.call_args.kwargs["timeout"], 120)
 
     def test_skips_quietly_without_libreoffice(self):
         with mock.patch.object(previews, "office_command", return_value=None):

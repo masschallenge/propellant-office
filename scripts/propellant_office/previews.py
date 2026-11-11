@@ -11,6 +11,8 @@ PREVIEW_SOURCES = (
 
 PREVIEW_FOLDER = "previews"
 
+CONVERSION_TIMEOUT_SECONDS = 120
+
 
 def preview_name(source):
     return f"{Path(source).stem}.png"
@@ -37,12 +39,22 @@ def conversion_arguments(command, source, output_folder, profile_folder):
 def render_preview(command, source, output):
     with tempfile.TemporaryDirectory() as working_folder:
         working = Path(working_folder)
-        subprocess.run(
-            conversion_arguments(command, source, working / "out", working / "profile"),
-            check=True,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
+        try:
+            subprocess.run(
+                conversion_arguments(command, source, working / "out", working / "profile"),
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE,
+                text=True,
+                timeout=CONVERSION_TIMEOUT_SECONDS,
+            )
+        except subprocess.TimeoutExpired as error:
+            raise RuntimeError(
+                f"LibreOffice took longer than {CONVERSION_TIMEOUT_SECONDS} seconds to render {source}"
+            ) from error
+        except subprocess.CalledProcessError as error:
+            reason = (error.stderr or "").strip() or f"exit status {error.returncode}"
+            raise RuntimeError(f"LibreOffice could not render {source}: {reason}") from error
         rendered = working / "out" / preview_name(source)
         if not rendered.exists():
             raise RuntimeError(f"LibreOffice did not render {source}")
