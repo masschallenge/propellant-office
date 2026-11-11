@@ -72,7 +72,8 @@ When [LibreOffice](https://www.libreoffice.org) is installed, the build also ren
 first page or slide of each template into `templates/previews`, for the template gallery on
 [propellant.masschallenge.org](https://propellant.masschallenge.org). Without LibreOffice it skips
 that step and leaves the committed previews as they are. Install Lato and Oswald first, or the
-previews show substitute fonts.
+previews show substitute fonts. CI renders the previews with LibreOffice and the same pinned Lato and Oswald
+files, and fails when the committed previews do not match.
 
 ## Contributing and security
 
