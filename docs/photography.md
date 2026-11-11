@@ -12,15 +12,12 @@ also applies.
 ## The photo library
 
 Start with the [photo library](https://propellant.masschallenge.org/brand/#photos) on the
-Propellant site. It collects the photos masschallenge.org shows today, in five groups: community,
-founders at work, places, technology and teal duotone. Every photo in it carries the same rights
-note: "Used on masschallenge.org. Confirm releases before using it outside MassChallenge
-channels." The technology group may include licensed stock, so check its license before you use
-one of those photos anywhere else.
+Propellant site. It holds MassChallenge's own photos for MassChallenge work, in four groups:
+community, founders at work, places and teal duotone.
 
 ## What our photos show
 
-Our website today is built around photos of the community: small teams working together at a
+Our photos center on the community: small teams working together at a
 whiteboard, founders networking at events, panel discussions, award moments on stage, and the
 Boston waterfront where we started. Follow the same direction.
 
@@ -96,11 +93,11 @@ We use photos in three ways.
 | --- | --- | --- |
 | Natural color | News, event recaps, stories about real people, documentation | Keep the photo's natural color. Correct exposure and white balance only. |
 | Teal duotone | Backgrounds behind text and section headers | Wash the photo in a gradient from Deep teal `#044451` to Bright teal `#0FACBD`. |
-| Hexagon network frame | Featuring a photo as a graphic, as the website does | Crop the photo to a circle and set it inside a Pale teal `#D9F6FA` network of hexagons and lines. |
+| Hexagon network frame | Featuring a single photo as a graphic | Crop the photo to a circle and set it inside a Pale teal `#D9F6FA` network of hexagons and lines. |
 
-- The teal duotone is how the website puts text on photos. Set the headline or section title in
+- Use the teal duotone to put text on photos. Set the headline or section title in
   White on the darker, Deep teal side.
-- The hexagon network frame is one of the website's graphic devices. Keep the network in Pale
+- The hexagon network frame is one of the brand's graphic devices. Keep the network in Pale
   teal, and crop the circle on purpose, as the cropping rules below explain.
 - Never duotone a photo where the people's identity matters, such as a founder portrait or an
   award winner. People should look like themselves.
@@ -116,8 +113,8 @@ more exact duotone in a photo editor. The teal duotone group in the
 
 To crop a photo to a circle for the hexagon network frame, choose **Picture Format**, then
 **Crop**, then **Aspect Ratio**, then **1:1**, and then **Crop to Shape**, then **Oval**. The
-hexagon network artwork itself is not in this repository yet; the website's examples show how it
-sits around the photo.
+[brand guide](https://propellant.masschallenge.org/brand/#device-hexagon-frame) shows how the
+network sits around the photo.
 
 ## Cropping and placing photos
 
@@ -125,8 +122,8 @@ sits around the photo.
   knees), and leave the people looking or moving into the page, not out of it.
 - Never stretch or squash a photo. Resize it from a corner so it keeps its proportions.
 - Use one strong photo rather than several small ones. A collage of thumbnails is hard to read.
-- Round photo corners slightly, about 0.12 inch (3 mm), as the website does. Full bleed photos that
-  run to the edge of a slide stay square.
+- Round photo corners slightly, about 0.12 inch (3 mm), the same as the 12 pixel corners on
+  screen. Full bleed photos that run to the edge of a slide stay square.
 - Use photos that are large enough: at least 1920 pixels wide for a full slide, and at least 1200
   pixels wide for a half slide or a document page. A blurry photo looks careless.
 - Put the white logo on a dark, calm part of a photo, and the full color logo only on white.

@@ -33,8 +33,7 @@ administrator can share them with everyone.
 | Oswald | Display headlines only: a document title, a slide title or a sheet title. Always in capitals. | Documents, slides, social graphics and public web pages. Never inside signed in product screens |
 
 Oswald is a narrow, condensed font. It is made for short, large headlines and is hard to read in
-long text, so never use it for paragraphs, bullets or table text. The website sets its headlines
-in Oswald capitals and its body text in a sans serif, so our files match it.
+long text, so never use it for paragraphs, bullets or table text.
 
 In email, Lato falls back to Arial, Helvetica, sans-serif for anyone who does not have it.
 
@@ -103,7 +102,7 @@ The logo artwork has two colors of its own, Logo gray `#828486` (CMYK 53 44 43 7
 
 The CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web
 coated), relative colorimetric intent, rounded to whole percent. Check a printed proof before a
-large run. Pantone matches are not set; print from the CMYK values.
+large run.
 
 ### The theme
 
@@ -234,8 +233,8 @@ have the full logo rules.
 - **Leave space.** White space makes a page easier to read. Do not fill every corner.
 - **Align to the margins.** Line up text, images and charts on the same left edge.
 - **One idea per slide, one table per sheet, one purpose per document.**
-- **Round the corners of photos and panels** slightly, about 0.12 inch (3 mm), as the website does
-  with 12 pixels. Logos and charts stay square.
+- **Round the corners of photos and panels** slightly, about 0.12 inch (3 mm), the same as the 12
+  pixel corners on screen. Logos and charts stay square.
 - **Use real lists.** Use the bullet and numbering buttons, never typed dashes or asterisks.
 
 ## Writing
@@ -252,9 +251,8 @@ Documents sound like the rest of MassChallenge: bold and human, direct and plain
 ## About MassChallenge
 
 Anything that goes outside MassChallenge, such as a proposal, a report or a pitch deck, ends with
-a short About MassChallenge paragraph or slide. Quote one of these versions exactly, from the
-[About page](https://masschallenge.org/about-us/). Use the short version on a slide and the
-medium or long version in a document.
+a short About MassChallenge paragraph or slide. Quote one of these versions exactly. Use the short
+version on a slide and the medium or long version in a document.
 
 **Short**
 
@@ -268,12 +266,10 @@ medium or long version in a document.
 
 > Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the grit to solve the world's hardest challenges. What began in New England's innovation corridor is now a global network connecting startups, experts, and partners across industries and continents, all working to turn bold ideas into outcomes that matter. We are the earliest believer in founders tackling complex, regulated, and high-stakes problems, providing the infrastructure, access, and catalytic capital to move from proof to scale. Since 2009, MassChallenge has supported more than 5,000 startups across five Challenge Areas, helping them raise $16B+ in funding, create 90K jobs, and collaborate with more than 500 partners worldwide.
 
-The figures in the long version are as of November 11, 2026, from the
-[About page](https://masschallenge.org/about-us/). Show that date whenever you use a figure. A
-graphic on the website says 77K direct jobs created by alumni while the About page says 90K jobs;
-use 90K until the brand team confirms.
+The figures in the long version are as of November 2026. Show that date whenever you use a
+figure.
 
-Our primary line, from the website's home page, is "We back the rare humans with the grit to solve
+Our primary line is "We back the rare humans with the grit to solve
 the toughest challenges." "It takes a community to raise a startup" is a founder's testimonial,
 not a MassChallenge line, so never use it as a tagline.
 
@@ -283,7 +279,7 @@ Use these lines in footers and on closing slides. The templates already carry th
 
 - **Email:** contact@masschallenge.org
 - **Copyright:** © MassChallenge 2026, with the current year.
-- **No trademark symbol** on the MassChallenge name or logo. The website uses none.
+- **No trademark symbol** on the MassChallenge name or logo.
 
 ## Accessibility
 

@@ -44,7 +44,7 @@ and its guides are published at [propellant.masschallenge.org](https://propellan
 
 Every template uses the standard Propellant palette, the same on the web, in Office and Google
 files and in print. [Foundations](docs/foundations.md#color) lists each color with its hex, RGB
-and print CMYK values. Pantone matches are not set; print from the CMYK values.
+and print CMYK values.
 
 Every template uses Lato for all text and Oswald capitals for titles, free fonts from Google Fonts.
 Google Workspace has both; Office computers need them installed.

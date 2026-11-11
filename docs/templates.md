@@ -75,8 +75,8 @@ These steps need an administrator.
 - **Fonts:** the same administrator can
   [publish Lato and Oswald as organization fonts](https://learn.microsoft.com/en-us/sharepoint/support-for-organization-fonts-in-powerpoint-for-the-web)
   so they work in PowerPoint and Word on every platform, including the web, without anyone
-  installing them. Both fonts are under the SIL Open Font License, but have the license checked
-  for cloud hosting first. Allow up to a day for both to appear.
+  installing them. Both fonts are free under the SIL Open Font License, which allows installing,
+  using and hosting them for any work. Allow up to a day for both to appear.
 - **Installing the fonts:** IT can also install Lato and Oswald on every managed computer.
 
 ### Google Workspace

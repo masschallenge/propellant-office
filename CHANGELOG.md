@@ -19,13 +19,12 @@ versioning.
 
 ### Changed
 
-- Magenta is now `#BF0261` and Mist is now `#F3FBFC`, the website's values, everywhere. The gray
+- Magenta is now `#BF0261` and Mist is now `#F3FBFC` everywhere. The gray
   `#F3F6F7` that the templates called Mist is replaced by Mist, so the theme's Light 2 and the
   table stripes are now Mist.
 - The sixth theme accent is named Gray 300 and table lines Gray 100, after their Propellant tokens.
 - The foundations say where each font applies, including product screens and email.
-- The teal duotone runs from Deep teal to Bright teal, as on the website, instead of Deep teal to
-  Pale teal.
+- The teal duotone runs from Deep teal to Bright teal, instead of Deep teal to Pale teal.
 
 ## 1.0.0 (2026-11-10)
 
