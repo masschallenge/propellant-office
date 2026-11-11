@@ -14,6 +14,19 @@ regular file (`.docx`, `.pptx`, `.xlsx`) for Google Workspace and for opening di
 Install [Lato and Oswald](foundations.md#getting-the-fonts) first, or Office will show other
 fonts.
 
+## What the templates carry
+
+- **Colors:** the Propellant theme, built from the [standard palette](foundations.md#the-palette),
+  with Mist `#F3FBFC` as Light 2 and the chart colors in the standard order: Teal, Yellow, Slate,
+  Bright teal, Deep teal, Gray 300. Table stripes are Mist and table lines are Gray 100 `#DBE1E3`.
+- **Fonts:** Lato for all text and Oswald capitals for titles, as
+  [the foundations](foundations.md#fonts) set out.
+- **Contact and legal lines:** the document footer reads "© MassChallenge 2026 |
+  contact@masschallenge.org | Page", and the closing slide of the presentation carries the same
+  email and copyright line under the short [About MassChallenge](foundations.md#about-masschallenge)
+  line. Neither uses a trademark symbol. The year comes from the build date in
+  `scripts/propellant_office/brand.py`, so update that date and rebuild when the year changes.
+
 ## For yourself
 
 ### Microsoft Office on Windows

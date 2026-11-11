@@ -42,8 +42,17 @@ and its guides are published at [propellant.masschallenge.org](https://propellan
 | Workbook | [`propellant-workbook.xltx`](templates/excel/propellant-workbook.xltx) | [`propellant-workbook.xlsx`](templates/excel/propellant-workbook.xlsx) |
 | Theme | [`Propellant.thmx`](templates/powerpoint/Propellant.thmx): colors and fonts for any existing Office file | |
 
-Every template uses Lato and Oswald, free fonts from Google Fonts. Google Workspace has both;
-Office computers need them installed. [Foundations](docs/foundations.md#fonts) explains how.
+Every template uses the standard Propellant palette, the same on the web, in Office and Google
+files and in print. [Foundations](docs/foundations.md#color) lists each color with its hex, RGB
+and print CMYK values. Pantone matches are not set; print from the CMYK values.
+
+Every template uses Lato for all text and Oswald capitals for titles, free fonts from Google Fonts.
+Google Workspace has both; Office computers need them installed.
+[Foundations](docs/foundations.md#fonts) explains how.
+
+The document footer and the closing slide carry contact@masschallenge.org and © MassChallenge
+2026, with no trademark symbol, and the closing slide quotes the short
+[About MassChallenge](docs/foundations.md#about-masschallenge) line.
 
 ## Building the templates
 

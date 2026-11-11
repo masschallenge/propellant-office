@@ -29,6 +29,7 @@ from propellant_office.theme import brand_theme_xml, color_scheme_xml  # noqa: E
 from propellant_office.word import build_word_template, footer_text  # noqa: E402
 
 LOGOS = ROOT / "assets" / "logos"
+DOCS = ROOT / "docs"
 
 RETIRED_COLORS = ("A30253", "F3F6F7")
 
@@ -169,6 +170,25 @@ class BrandStandards(unittest.TestCase):
     def test_copyright_line_has_no_trademark_symbol(self):
         self.assertEqual(COPYRIGHT_LINE, "\u00a9 MassChallenge 2026")
         self.assertIn(COPYRIGHT_LINE, footer_text())
+
+    def test_foundations_list_every_color_with_hex_rgb_and_cmyk(self):
+        foundations = (DOCS / "foundations.md").read_text("utf-8")
+        for color in PALETTE + SUPPORTING_NEUTRALS:
+            red, green, blue = (int(color.hex_value[index:index + 2], 16) for index in (0, 2, 4))
+            row = re.search(rf"^\| {color.name} \|.*$", foundations, re.M)
+            self.assertIsNotNone(row, color.name)
+            self.assertIn(f"`#{color.hex_value}`", row.group(0))
+            self.assertIn(f"{red} {green} {blue}", row.group(0))
+            self.assertIn(" ".join(str(part) for part in color.print_cmyk), row.group(0))
+        self.assertIn("Pantone matches are not set; print from the CMYK values", foundations)
+
+    def test_docs_quote_the_boilerplate_exactly_and_drop_retired_colors(self):
+        for path in [*DOCS.glob("*.md"), ROOT / "README.md"]:
+            text = path.read_text("utf-8")
+            for color in RETIRED_COLORS:
+                self.assertFalse(color in text.upper(), f"{path.name} {color}")
+            self.assertFalse("\u2014" in text or "\u2013" in text, path.name)
+        self.assertIn(SHORT_BOILERPLATE, (DOCS / "foundations.md").read_text("utf-8"))
 
 
 class TemplatePreviews(unittest.TestCase):

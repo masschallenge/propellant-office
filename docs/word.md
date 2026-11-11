@@ -28,6 +28,10 @@ Every document follows the same order so readers always know where to look:
 3. **Status line** in italics, such as Status: Draft, and **Author** on the line below.
 4. **Overview** as Heading 1: one or two paragraphs with the point, the ask or the decision.
 5. **Sections** as Heading 1, with Heading 2 for the parts inside them.
+6. **About MassChallenge** as Heading 1, last, in documents that go outside MassChallenge: a
+   proposal, a report or a one pager for partners. Quote the medium or long
+   [boilerplate](foundations.md#about-masschallenge) exactly, and show the as-of date with any
+   figure.
 
 Keep documents short. Most should fit on four pages. If it runs longer, move detail to an
 appendix at the end.
@@ -59,7 +63,7 @@ type the title normally.
 ## Tables
 
 The sample table in the template shows the style: a Deep teal header row with White bold text,
-thin Line `#DBE1E3` rules between rows and Mist on every other row.
+thin Gray 100 `#DBE1E3` rules between rows and Mist `#F3FBFC` on every other row.
 
 - Put the header in the first row and set it to repeat: select the row, choose **Table Layout**,
   then **Repeat Header Rows**.
@@ -83,8 +87,9 @@ fill and a Teal left border, as in the template. Copy it from the sample. Use on
 
 ## Headers and footers
 
-The template puts the full color logo at the top left of every page and "MassChallenge | Page"
-with the page number at the bottom right. Do not add more to the header. For a confidential
+The template puts the full color logo at the top left of every page and "© MassChallenge 2026 |
+contact@masschallenge.org | Page" with the page number at the bottom right. Update the year when
+it changes, and never add a trademark symbol to the name. Do not add more to the header. For a confidential
 document, add the word Confidential to the footer, never a watermark across the page.
 
 ## Before you share

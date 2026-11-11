@@ -19,6 +19,12 @@ how an administrator sets that up, and how to share a "make a copy" link.
 
 Google does not publish a list of what changes when a Word file is converted, so check the result.
 The styles, colors, logo and table come across; review the header, footer and page numbers once.
+The footer should read "© MassChallenge 2026 | contact@masschallenge.org | Page" and the page
+number.
+
+Documents that go outside MassChallenge end with an About MassChallenge section, as the
+[Word guide](word.md#structure) explains, quoting the
+[boilerplate](foundations.md#about-masschallenge) exactly.
 
 ## Fonts
 
@@ -55,7 +61,8 @@ Google Docs cannot make text capitals with a style setting, so type the Title in
 ## Tables and callouts
 
 - Insert tables with **Insert**, then **Table**. Set the header row background to Deep teal
-  `#044451` with White bold text, and add Mist `#F3F6F7` to alternate rows if the table is long.
+  `#044451` with White bold text, add Mist `#F3FBFC` to alternate rows if the table is long,
+  and use Gray 100 `#DBE1E3` for the lines between rows.
 - To pin the header row when a table crosses pages, right click it, choose **Table properties**,
   then **Pin header rows**.
 - For a callout, insert a one cell table with a Pale teal `#D9F6FA` background and no border, or
