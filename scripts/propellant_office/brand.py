@@ -1,17 +1,48 @@
 from datetime import datetime
 from dataclasses import dataclass
 
+DEEP_TEAL = "044451"
+TEAL = "065E6F"
+MID_TEAL = "068DA4"
+BRIGHT_TEAL = "0FACBD"
+PALE_TEAL = "D9F6FA"
+MIST = "F3FBFC"
+MAGENTA = "BF0261"
+YELLOW = "FFC801"
 INK = "1E282B"
 SLATE = "4B575B"
 WHITE = "FFFFFF"
-MIST = "F3F6F7"
-LINE = "DBE1E3"
-TEAL = "065E6F"
-DEEP_TEAL = "044451"
-BRIGHT_TEAL = "0FACBD"
-PALE_TEAL = "D9F6FA"
-YELLOW = "FFC801"
-GRAY = "848F92"
+GRAY_100 = "DBE1E3"
+GRAY_300 = "848F92"
+
+
+@dataclass(frozen=True)
+class BrandColor:
+    name: str
+    hex_value: str
+    print_cmyk: tuple
+
+
+PALETTE = (
+    BrandColor("Deep teal", DEEP_TEAL, (100, 64, 53, 50)),
+    BrandColor("Teal", TEAL, (100, 55, 45, 24)),
+    BrandColor("Mid teal", MID_TEAL, (87, 31, 31, 2)),
+    BrandColor("Bright teal", BRIGHT_TEAL, (78, 11, 26, 0)),
+    BrandColor("Pale teal", PALE_TEAL, (13, 0, 2, 0)),
+    BrandColor("Mist", MIST, (3, 0, 1, 0)),
+    BrandColor("Magenta", MAGENTA, (21, 100, 42, 5)),
+    BrandColor("Yellow", YELLOW, (0, 22, 100, 0)),
+    BrandColor("Ink", INK, (81, 66, 63, 83)),
+    BrandColor("Slate", SLATE, (73, 57, 55, 35)),
+    BrandColor("White", WHITE, (0, 0, 0, 0)),
+)
+
+SUPPORTING_NEUTRALS = (
+    BrandColor("Gray 100", GRAY_100, (13, 7, 8, 0)),
+    BrandColor("Gray 300", GRAY_300, (53, 38, 39, 4)),
+)
+
+CHART_ORDER = (TEAL, YELLOW, SLATE, BRIGHT_TEAL, DEEP_TEAL, GRAY_300)
 
 THEME_NAME = "Propellant"
 
@@ -22,18 +53,23 @@ THEME_COLORS = {
     "lt1": WHITE,
     "dk2": DEEP_TEAL,
     "lt2": MIST,
-    "accent1": TEAL,
-    "accent2": YELLOW,
-    "accent3": SLATE,
-    "accent4": BRIGHT_TEAL,
-    "accent5": DEEP_TEAL,
-    "accent6": GRAY,
+    **{
+        f"accent{position}": color
+        for position, color in enumerate(CHART_ORDER, start=1)
+    },
     "hlink": TEAL,
     "folHlink": DEEP_TEAL,
 }
 
 HEADLINE_FONT = "Oswald"
 BODY_FONT = "Lato"
+
+CONTACT_EMAIL = "contact@masschallenge.org"
+COPYRIGHT_LINE = f"© MassChallenge {BUILD_DATE.year}"
+SHORT_BOILERPLATE = (
+    "Born in Massachusetts and built for the world, MassChallenge backs the rare humans with the "
+    "grit to solve the world's hardest challenges."
+)
 
 
 @dataclass(frozen=True)

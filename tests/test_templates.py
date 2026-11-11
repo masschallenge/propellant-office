@@ -9,14 +9,28 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from propellant_office.brand import BODY_FONT, HEADLINE_FONT, THEME_COLORS  # noqa: E402
+from propellant_office.brand import (  # noqa: E402
+    BODY_FONT,
+    CHART_ORDER,
+    CONTACT_EMAIL,
+    COPYRIGHT_LINE,
+    HEADLINE_FONT,
+    MAGENTA,
+    MIST,
+    PALETTE,
+    SHORT_BOILERPLATE,
+    SUPPORTING_NEUTRALS,
+    THEME_COLORS,
+)
 from propellant_office.excel import build_excel_template  # noqa: E402
 from propellant_office.powerpoint import build_powerpoint_template  # noqa: E402
 from propellant_office import previews  # noqa: E402
 from propellant_office.theme import brand_theme_xml, color_scheme_xml  # noqa: E402
-from propellant_office.word import build_word_template  # noqa: E402
+from propellant_office.word import build_word_template, footer_text  # noqa: E402
 
 LOGOS = ROOT / "assets" / "logos"
+
+RETIRED_COLORS = ("A30253", "F3F6F7")
 
 TEMPLATE_TYPES = {
     "propellant-document.dotx": "wordprocessingml.template.main+xml",
@@ -101,6 +115,28 @@ class BuiltTemplates(unittest.TestCase):
         first_font = re.search(r"<font>.*?</font>", styles, re.S).group(0)
         self.assertIn(f'val="{BODY_FONT}"', first_font)
 
+    def test_no_file_carries_a_retired_brand_color(self):
+        for path in self.files:
+            with zipfile.ZipFile(path) as package:
+                for name in package.namelist():
+                    data = package.read(name).upper()
+                    for color in RETIRED_COLORS:
+                        self.assertNotIn(color.encode(), data, f"{path.name} {name}")
+
+    def test_document_footer_carries_the_copyright_and_contact_lines(self):
+        [footer] = read_entry(self.output / "propellant-document.docx", r"^word/footer\d*\.xml$")
+        self.assertIn(COPYRIGHT_LINE, footer)
+        self.assertIn(CONTACT_EMAIL, footer)
+        self.assertNotIn("\u2122", footer)
+        self.assertNotIn("\u00ae", footer)
+
+    def test_closing_slide_carries_the_boilerplate_and_contact_lines(self):
+        slides = read_entry(self.output / "propellant-presentation.pptx", r"^ppt/slides/slide\d+\.xml$")
+        closing = next(slide for slide in slides if "Thank you" in slide)
+        self.assertIn(SHORT_BOILERPLATE, closing)
+        self.assertIn(CONTACT_EMAIL, closing)
+        self.assertIn(COPYRIGHT_LINE, closing)
+
 
 class ThemeRewriting(unittest.TestCase):
     def test_replaces_colors_fonts_and_name(self):
@@ -114,6 +150,25 @@ class ThemeRewriting(unittest.TestCase):
         self.assertIn('name="Propellant"', branded)
         self.assertIn(color_scheme_xml(), branded)
         self.assertNotIn("windowText", branded)
+
+
+class BrandStandards(unittest.TestCase):
+    def test_palette_uses_the_standard_magenta_and_mist(self):
+        self.assertEqual(MAGENTA, "BF0261")
+        self.assertEqual(MIST, "F3FBFC")
+        names = [color.name for color in PALETTE + SUPPORTING_NEUTRALS]
+        self.assertEqual(len(names), len(set(names)))
+        self.assertNotIn("Gray", names)
+
+    def test_theme_accents_follow_the_standard_chart_order(self):
+        accents = [THEME_COLORS[f"accent{position}"] for position in range(1, 7)]
+        self.assertEqual(accents, list(CHART_ORDER))
+        self.assertEqual(CHART_ORDER, ("065E6F", "FFC801", "4B575B", "0FACBD", "044451", "848F92"))
+        self.assertEqual(THEME_COLORS["lt2"], MIST)
+
+    def test_copyright_line_has_no_trademark_symbol(self):
+        self.assertEqual(COPYRIGHT_LINE, "\u00a9 MassChallenge 2026")
+        self.assertIn(COPYRIGHT_LINE, footer_text())
 
 
 class TemplatePreviews(unittest.TestCase):
