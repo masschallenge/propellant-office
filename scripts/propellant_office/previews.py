@@ -1,3 +1,4 @@
+import os
 import shutil
 import subprocess
 import tempfile
@@ -12,6 +13,8 @@ PREVIEW_SOURCES = (
 PREVIEW_FOLDER = "previews"
 
 CONVERSION_TIMEOUT_SECONDS = 120
+
+RENDER_FONT_CONFIG = Path(__file__).with_name("render-fonts.conf")
 
 
 def preview_name(source):
@@ -36,6 +39,10 @@ def conversion_arguments(command, source, output_folder, profile_folder):
     ]
 
 
+def rendering_environment():
+    return {**os.environ, "FONTCONFIG_FILE": str(RENDER_FONT_CONFIG)}
+
+
 def render_preview(command, source, output):
     with tempfile.TemporaryDirectory() as working_folder:
         working = Path(working_folder)
@@ -47,6 +54,7 @@ def render_preview(command, source, output):
                 stderr=subprocess.PIPE,
                 text=True,
                 timeout=CONVERSION_TIMEOUT_SECONDS,
+                env=rendering_environment(),
             )
         except subprocess.TimeoutExpired as error:
             raise RuntimeError(
