@@ -7,7 +7,17 @@ from openpyxl.drawing.image import Image
 from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.worksheet.table import Table, TableStyleInfo
 
-from .brand import BODY_FONT, BUILD_DATE, DEEP_TEAL, HEADLINE_FONT, INK, LOGO_FILES, MIST, SLATE, WHITE
+from .brand import (
+    BLACK,
+    BODY_FONT,
+    BUILD_DATE,
+    HEADLINE_SEMIBOLD_FONT,
+    NAVY,
+    SLATE,
+    WARM_WHITE,
+    WHITE,
+    logo_for_background,
+)
 from .theme import as_template_package, brand_package_themes
 
 EXAMPLE_ROWS = (
@@ -20,7 +30,7 @@ EXAMPLE_ROWS = (
 GUIDANCE = (
     "Put the takeaway in the sheet title, for example Applications grew in every program.",
     "Keep one table per sheet, with the header in the first row and no blank rows or columns.",
-    "Keep the Deep teal header row and Mist stripes, or use Format as Table for filters.",
+    "Keep the Navy header row and Warm White stripes, or use Format as Table for filters.",
     "Right align numbers, use the same number of decimals in a column, and add units to headers.",
     "Charts take their colors from the theme. Start with a bar or line chart and label it directly.",
     "Do not use color alone to show status. Add a word such as On track or Late.",
@@ -29,13 +39,13 @@ GUIDANCE = (
 
 def set_default_font(workbook):
     normal = next(style for style in workbook._named_styles if style.name == "Normal")
-    normal.font = Font(name=BODY_FONT, size=11, color=INK)
-    workbook._fonts[0] = Font(name=BODY_FONT, size=11, color=INK)
+    normal.font = Font(name=BODY_FONT, size=11, color=BLACK)
+    workbook._fonts[0] = Font(name=BODY_FONT, size=11, color=BLACK)
 
 
 def add_title(sheet, text, cell="B2"):
     sheet[cell] = text
-    sheet[cell].font = Font(name=HEADLINE_FONT, size=24, color=DEEP_TEAL)
+    sheet[cell].font = Font(name=HEADLINE_SEMIBOLD_FONT, size=24, color=BLACK)
     sheet.row_dimensions[sheet[cell].row].height = 36
 
 
@@ -47,7 +57,7 @@ def build_start_sheet(sheet, logos):
     sheet.sheet_properties.pageSetUpPr.fitToPage = True
     sheet.column_dimensions["A"].width = 3
     sheet.column_dimensions["B"].width = 90
-    logo = Image(str(logos / LOGO_FILES["color"]))
+    logo = Image(str(logos / logo_for_background(WHITE)))
     logo.width, logo.height = round(logo.width * 28 / logo.height), 28
     sheet.add_image(logo, "B1")
     sheet.row_dimensions[1].height = 34
@@ -55,7 +65,7 @@ def build_start_sheet(sheet, logos):
     sheet["B4"] = "Say in one sentence what this workbook answers and who it is for."
     sheet["B4"].font = Font(name=BODY_FONT, size=12, color=SLATE)
     sheet["B6"] = "How to use this template"
-    sheet["B6"].font = Font(name=BODY_FONT, size=14, bold=True, color=INK)
+    sheet["B6"].font = Font(name=BODY_FONT, size=14, bold=True, color=BLACK)
     for offset, line in enumerate(GUIDANCE):
         cell = sheet.cell(row=7 + offset, column=2, value=f"•  {line}")
         cell.alignment = Alignment(wrap_text=True, vertical="top")
@@ -73,9 +83,9 @@ def build_data_sheet(workbook):
             cell = sheet.cell(row=first_row + row_offset, column=1 + column_offset, value=value)
             if row_offset == 0:
                 cell.font = Font(name=BODY_FONT, size=11, bold=True, color=WHITE)
-                cell.fill = PatternFill("solid", fgColor=DEEP_TEAL)
+                cell.fill = PatternFill("solid", fgColor=NAVY)
             elif row_offset % 2 == 0:
-                cell.fill = PatternFill("solid", fgColor=MIST)
+                cell.fill = PatternFill("solid", fgColor=WARM_WHITE)
             if column_offset:
                 cell.alignment = Alignment(horizontal="right")
             if row_offset and column_offset:
