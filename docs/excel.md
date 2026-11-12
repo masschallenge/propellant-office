@@ -30,13 +30,17 @@ Charts and cell colors chosen from the theme switch over at once.
 
 | Element | Style |
 | --- | --- |
-| Sheet title | Oswald, 24 pt, Deep teal, typed in capitals, in the first rows |
+| Sheet title | Oswald SemiBold, 24 pt, Black, typed in capitals, in the first rows |
 | Description under the title | Lato, 11 or 12 pt, Slate |
-| Table header row | Lato Bold, 11 pt, White on Deep teal |
-| Cells | Lato, 11 pt, Ink |
-| Alternate rows | Mist `#F3FBFC` fill, or none |
+| Table header row | Lato Bold, 11 pt, White on Navy `#10263F` |
+| Cells | Lato, 11 pt, Black |
+| Alternate rows | Warm White `#F8F8F5` fill, or none |
 
 Header text is in sentence case and includes the unit, such as Budget (USD) or Duration (days).
+
+Excel cannot make text capitals with a style, so type the sheet title in capitals. If Oswald or
+Lato is missing, the brand guide's [fallback](foundations.md#when-oswald-or-lato-is-not-there) is
+Aptos Narrow Bold in capitals for the title and Aptos for everything else. Never Arial.
 
 ## Numbers
 
@@ -50,7 +54,7 @@ Header text is in sentence case and includes the unit, such as Budget (USD) or D
 
 ## Tables and filters
 
-The header row and Mist stripes in the template are applied directly, so they look the same in
+The header row and Warm White stripes in the template are applied directly, so they look the same in
 Excel and in Google Sheets. To add filters and sorting, select the data and choose **Insert**,
 then **Table**. When you do, pick a table style from the light row so it does not fight the
 header colors, or keep the template formatting and turn off banded rows.
@@ -59,8 +63,9 @@ header colors, or keep the template formatting and turn off banded rows.
 
 - Show status with a word in its own column, such as On track, At risk or Late. Color can support
   the word, but never replace it.
-- For conditional formatting, use the Pale teal `#D9F6FA` fill for highlights and Yellow `#FFC801`
-  with Ink text for items that need attention. Keep Magenta `#BF0261` for things that are wrong.
+- For conditional formatting, use the Light tint `#F3FAFC` fill for highlights. For things that
+  are wrong, use Propellant's error color, magenta `#BF0261`, with the word beside it. Never use
+  Raspberry, Orange or Lime to show status: they are decorative brand accents.
 - Avoid data bars and icon sets in shared workbooks: they are hard to read and do not survive
   every export.
 
@@ -92,3 +97,4 @@ header colors, or keep the template formatting and turn off banded rows.
 - Colors picked from **More Colors** instead of the theme row.
 - Hidden rows or sheets with data others depend on.
 - Oswald anywhere but the sheet title.
+- The full color logo on anything but White or Warm White.

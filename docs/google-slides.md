@@ -36,6 +36,9 @@ started, because the layouts will shift.
 
 - Lato and Oswald are available in Google Slides. If they are not in your font menu, choose
   **More fonts** and add them.
+- Titles are Oswald SemiBold in capitals. After converting, check a title on a white slide and on
+  a dark slide. If a title shows another font, select it and choose Oswald and its SemiBold weight
+  from the font menu, then fix the layout in the theme builder so every slide follows.
 - Check the theme colors with **Slide**, then **Edit theme**, then **Colors**. The Propellant
   colors appear as Text and background, Accent 1 to 6 and Link. Pick colors from the theme
   section of any color menu, never a custom color.
@@ -44,7 +47,8 @@ started, because the layouts will shift.
 
 Google calls the master slides the **theme builder**: choose **Slide**, then **Edit theme**. The
 first slide in the left panel is the master; the rest are the layouts. The converted template
-already carries the Propellant master, with the Deep teal title and section layouts and the logo.
+already carries the Propellant master, with the Navy title layout, the Deep Teal section layout
+and the logo.
 Change layouts here only to fix something for every slide, and keep the original Propellant theme
 untouched in a separate copy.
 
@@ -56,6 +60,13 @@ untouched in a separate copy.
 - Insert video with **Insert**, then **Video**, from YouTube or Drive. Under **Format options**,
   set it to play on click and turn on captions if they exist.
 - Follow the [photography guide](photography.md).
+
+## The logo
+
+The converted template carries the logo: white on the Navy and Deep Teal slides, full color on
+white slides. Use the full color logo only on White or Warm White, and the white logo on Navy,
+Black, Deep Teal, Teal or MC Blue, never on Cyan, Yellow or Lime. The
+[foundations](foundations.md#the-logo) have the clear space and size rules.
 
 ## Presenting and sharing
 
