@@ -10,7 +10,8 @@ make every day: documents, presentations and spreadsheets in Microsoft Word, Pow
 and in Google Docs, Slides and Sheets. It has the guides for designing each one, templates you can
 import, and the rules for photography and video.
 
-It follows the same brand, colors, fonts and voice as [Propellant for the web](https://github.com/masschallenge/propellant-web),
+It applies the MassChallenge brand guidelines from MassChallenge Marketing, with the same colors,
+fonts, logo rules and voice as [Propellant for the web](https://github.com/masschallenge/propellant-web),
 and its guides are published at [propellant.masschallenge.org](https://propellant.masschallenge.org).
 
 ## Start here
@@ -42,13 +43,15 @@ and its guides are published at [propellant.masschallenge.org](https://propellan
 | Workbook | [`propellant-workbook.xltx`](templates/excel/propellant-workbook.xltx) | [`propellant-workbook.xlsx`](templates/excel/propellant-workbook.xlsx) |
 | Theme | [`Propellant.thmx`](templates/powerpoint/Propellant.thmx): colors and fonts for any existing Office file | |
 
-Every template uses the standard Propellant palette, the same on the web, in Office and Google
-files and in print. [Foundations](docs/foundations.md#color) lists each color with its hex, RGB
-and print CMYK values.
+Every template uses the brand palette: Black text on White and Warm White, Navy and Deep Teal for
+title and section slides and table headers, Teal for headings and links, and the chart colors
+Teal, Yellow, Navy, MC Blue, Deep Teal and Gray 300. [Foundations](docs/foundations.md#color) lists
+each color with its hex, RGB, approximate CMYK and print substitute, and how the theme is mapped.
 
-Every template uses Lato for all text and Oswald capitals for titles, free fonts from Google Fonts.
-Google Workspace has both; Office computers need them installed.
-[Foundations](docs/foundations.md#fonts) explains how.
+Every template uses Oswald SemiBold capitals for titles and main headings and Lato for reading
+text, free fonts from Google Fonts. Google Workspace has both; Office computers need them
+installed. When they cannot be, the fallback is Aptos Narrow Bold capitals for headers and Aptos
+for body text, never Arial. [Foundations](docs/foundations.md#fonts) explains how.
 
 The document footer and the closing slide carry contact@masschallenge.org and © MassChallenge
 2026, with no trademark symbol, and the closing slide quotes the short
@@ -56,7 +59,7 @@ The document footer and the closing slide carry contact@masschallenge.org and ©
 
 ## Building the templates
 
-The templates are generated from the Propellant colors, fonts and logos, so they always agree with
+The templates are generated from the brand colors, fonts and logos, so they always agree with
 each other and with the web. To rebuild them:
 
 ```bash

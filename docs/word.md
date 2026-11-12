@@ -43,16 +43,20 @@ and big: it will not show in the navigation pane, the table of contents or a scr
 
 | Style | What it looks like | Use it for |
 | --- | --- | --- |
-| Title | Oswald, 32 pt, Deep teal, capitals | The document title, once |
+| Title | Oswald SemiBold, 32 pt, Black, capitals, line spacing 1.0 | The document title, once |
 | Subtitle | Lato, 14 pt, Slate | A short line under the title |
-| Heading 1 | Lato Bold, 20 pt, Ink | Sections, including Overview |
-| Heading 2 | Lato Bold, 15 pt, Ink | Parts of a section |
-| Heading 3 | Lato Bold, 12.5 pt, Ink | Use sparingly |
-| Normal | Lato, 11 pt, Ink, line spacing 1.4 | All body text |
-| List Bullet, List Number | Lato, 11 pt | Lists |
+| Heading 1 | Oswald SemiBold, 18 pt, Teal, capitals, line spacing 1.0 | Sections, including Overview |
+| Heading 2 | Oswald SemiBold, 14 pt, Black, capitals, line spacing 1.0 | Parts of a section |
+| Heading 3 | Lato Bold, 12 pt, Black | Use sparingly |
+| Normal | Lato, 11 pt, Black, line spacing 1.5 | All body text |
+| List Bullet, List Number | Lato, 11 pt, Black, line spacing 1.5 | Lists |
 
-Headings are in sentence case. Only the Title is in capitals, and the style does that for you, so
-type the title normally.
+The Title, Heading 1 and Heading 2 styles add the capitals for you, so type them in sentence case.
+Heading 3 and everything in Lato stays in sentence case.
+
+If Oswald or Lato cannot be installed on a computer, the brand guide's
+[fallback](foundations.md#when-oswald-or-lato-is-not-there) is Aptos Narrow Bold in capitals for
+headings and Aptos for body text. Never Arial.
 
 ## Lists
 
@@ -62,8 +66,8 @@ type the title normally.
 
 ## Tables
 
-The sample table in the template shows the style: a Deep teal header row with White bold text,
-thin Gray 100 `#DBE1E3` rules between rows and Mist `#F3FBFC` on every other row.
+The sample table in the template shows the style: a Navy `#10263F` header row with White bold
+text, thin Gray 100 `#DBE1E3` rules between rows and Warm White `#F8F8F5` on every other row.
 
 - Put the header in the first row and set it to repeat: select the row, choose **Table Layout**,
   then **Repeat Header Rows**.
@@ -73,8 +77,9 @@ thin Gray 100 `#DBE1E3` rules between rows and Mist `#F3FBFC` on every other row
 
 ## Callouts
 
-For the one thing a reader must not miss, use a callout: a paragraph with a Pale teal `#D9F6FA`
-fill and a Teal left border, as in the template. Copy it from the sample. Use one per page at most.
+For the one thing a reader must not miss, use a callout: a paragraph with a Warm White `#F8F8F5`
+fill and a Teal `#00708E` left border, as in the template. Copy it from the sample. Use one per
+page at most.
 
 ## Photos and images
 
@@ -87,9 +92,11 @@ fill and a Teal left border, as in the template. Copy it from the sample. Use on
 
 ## Headers and footers
 
-The template puts the full color logo at the top left of every page and "© MassChallenge 2026 |
+The template puts the full color horizontal logo at the top left of every page, about 53 mm
+wide, well above the 30 mm print minimum, and "© MassChallenge 2026 |
 contact@masschallenge.org | Page" with the page number at the bottom right. Update the year when
-it changes, and never add a trademark symbol to the name. Do not add more to the header. For a confidential
+it changes, and never add a trademark symbol to the name. Do not add more to the header, and keep
+clear space around the logo equal to the height of the "M" in the wordmark. For a confidential
 document, add the word Confidential to the footer, never a watermark across the page.
 
 ## Before you share
@@ -102,8 +109,10 @@ document, add the word Confidential to the footer, never a watermark across the 
 
 ## Things to avoid
 
-- Text in Teal, except links.
-- Oswald in body text, lists or tables.
+- Colored text other than Teal, and Teal for anything but headings and links.
+- Oswald or capitals in body text, lists or tables.
+- Arial, or any other retired font, as a fallback.
 - More than one font size per style, or text formatted by hand instead of with styles.
 - Word art, shadows, outlines, gradients and 3D effects.
+- The full color logo on anything but White or Warm White.
 - Clip art and low resolution logos copied from the web.

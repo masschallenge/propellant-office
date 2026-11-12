@@ -38,19 +38,24 @@ them from the style menu on the toolbar, which shows **Normal text** by default.
 
 | Google Docs style | Propellant style |
 | --- | --- |
-| Title | Oswald, 32 pt, Deep teal, capitals |
+| Title | Oswald SemiBold, 32 pt, Black, capitals, line spacing 1.0 |
 | Subtitle | Lato, 14 pt, Slate |
-| Heading 1 | Lato Bold, 20 pt, Ink |
-| Heading 2 | Lato Bold, 15 pt, Ink |
-| Heading 3 | Lato Bold, 12.5 pt, Ink |
-| Normal text | Lato, 11 pt, Ink, line spacing 1.4 |
+| Heading 1 | Oswald SemiBold, 18 pt, Teal, capitals, line spacing 1.0 |
+| Heading 2 | Oswald SemiBold, 14 pt, Black, capitals, line spacing 1.0 |
+| Heading 3 | Lato Bold, 12 pt, Black |
+| Normal text | Lato, 11 pt, Black, line spacing 1.5 |
 
 If a style looks wrong in a document that did not start from the template, fix one example by
 hand, select it, and choose **Update "Heading 1" to match** from the style menu. To make the
 Propellant styles your default for every new document, open the style menu, choose **Options**,
 then **Save as my default styles**.
 
-Google Docs cannot make text capitals with a style setting, so type the Title in capitals.
+Google Docs cannot make text capitals with a style setting, so type the Title, Heading 1 and
+Heading 2 in capitals.
+
+After converting, check that the Title and headings are in Oswald SemiBold. If they show another
+font, select one, choose Oswald and its SemiBold weight from the font menu, and update the style
+to match as above.
 
 ## Page setup
 
@@ -60,13 +65,13 @@ Google Docs cannot make text capitals with a style setting, so type the Title in
 
 ## Tables and callouts
 
-- Insert tables with **Insert**, then **Table**. Set the header row background to Deep teal
-  `#044451` with White bold text, add Mist `#F3FBFC` to alternate rows if the table is long,
+- Insert tables with **Insert**, then **Table**. Set the header row background to Navy
+  `#10263F` with White bold text, add Warm White `#F8F8F5` to alternate rows if the table is long,
   and use Gray 100 `#DBE1E3` for the lines between rows.
 - To pin the header row when a table crosses pages, right click it, choose **Table properties**,
   then **Pin header rows**.
-- For a callout, insert a one cell table with a Pale teal `#D9F6FA` background and no border, or
-  copy the callout from the template.
+- For a callout, insert a one cell table with a Warm White `#F8F8F5` background and a Teal
+  `#00708E` left border, or copy the callout from the template.
 
 Add custom colors once with **Custom** in any color menu; Docs remembers them under **Custom**.
 

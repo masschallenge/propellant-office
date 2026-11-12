@@ -12,16 +12,24 @@ from pptx.oxml.ns import qn
 from pptx.util import Inches, Pt
 
 from .brand import (
-    BRIGHT_TEAL,
+    BLACK,
+    BODY_FONT,
+    BODY_LINE_SPACING,
     BUILD_DATE,
     CONTACT_EMAIL,
     COPYRIGHT_LINE,
+    CYAN,
     DEEP_TEAL,
-    INK,
-    LOGO_FILES,
+    DISPLAY_LINE_SPACING,
+    HEADLINE_FONT,
+    HEADLINE_SEMIBOLD_FONT,
+    NAVY,
     SHORT_BOILERPLATE,
     SLATE,
+    TEAL,
     WHITE,
+    logo_for_background,
+    logo_width_for_height,
 )
 from .theme import as_template_package, brand_package_themes, theme_file_package
 
@@ -38,11 +46,19 @@ TITLE_ONLY = 5
 BLANK = 6
 PICTURE_WITH_CAPTION = 8
 
-DARK_LAYOUTS = (TITLE_SLIDE, SECTION_HEADER)
+DARK_LAYOUT_BACKGROUNDS = {TITLE_SLIDE: NAVY, SECTION_HEADER: DEEP_TEAL}
+PHOTO_LAYOUTS = (BLANK,)
 CAPTION_LAYOUTS = (7, PICTURE_WITH_CAPTION)
 
 
+BULLET_CHARACTER = "\u2022"
+
 MARGIN = 0.9
+MASTER_LOGO_HEIGHT = 0.3
+MASTER_LOGO_RIGHT_INSET = 0.37
+MASTER_LOGO_BOTTOM_INSET = 0.32
+DARK_LOGO_TOP = 0.6
+DARK_LOGO_HEIGHT = 0.42
 CONTENT_WIDTH = 13.333 - 2 * MARGIN
 TITLE_BOX = (MARGIN, 0.5, CONTENT_WIDTH, 1.1)
 BODY_BOX = (MARGIN, 1.85, CONTENT_WIDTH, 4.7)
@@ -97,9 +113,28 @@ def lay_out_placeholders(presentation):
                 place(placeholder, geometry[placeholder.placeholder_format.idx])
 
 
-def set_level_defaults(level_properties, size_pt=None, color=None, caps=None, font_reference=None, align=None, bullets=True):
+def set_line_spacing(level_properties, line_spacing):
+    for existing in level_properties.findall(qn("a:lnSpc")):
+        level_properties.remove(existing)
+    spacing = etree.Element(qn("a:lnSpc"))
+    etree.SubElement(spacing, qn("a:spcPct")).set("val", str(round(line_spacing * 100000)))
+    level_properties.insert(0, spacing)
+
+
+def set_level_defaults(
+    level_properties,
+    size_pt=None,
+    color=None,
+    caps=None,
+    font_reference=None,
+    align=None,
+    bullets=True,
+    line_spacing=None,
+):
     if align:
         level_properties.set("algn", align)
+    if line_spacing:
+        set_line_spacing(level_properties, line_spacing)
     defaults = level_properties.find(qn("a:defRPr"))
     if defaults is None:
         defaults = etree.SubElement(level_properties, qn("a:defRPr"))
@@ -127,12 +162,33 @@ def set_level_defaults(level_properties, size_pt=None, color=None, caps=None, fo
 def style_master_text(master):
     text_styles = master.element.find(qn("p:txStyles"))
     title_level = text_styles.find(qn("p:titleStyle")).find(qn("a:lvl1pPr"))
-    set_level_defaults(title_level, size_pt=40, color=INK, caps=True, font_reference="+mj-lt", align="l")
+    set_level_defaults(
+        title_level,
+        size_pt=40,
+        color=BLACK,
+        caps=True,
+        font_reference=HEADLINE_SEMIBOLD_FONT,
+        align="l",
+        line_spacing=DISPLAY_LINE_SPACING,
+    )
     body_style = text_styles.find(qn("p:bodyStyle"))
     for level_number, size_pt in ((1, 24), (2, 20), (3, 18), (4, 18), (5, 18)):
         level = body_style.find(qn(f"a:lvl{level_number}pPr"))
         if level is not None:
-            set_level_defaults(level, size_pt=size_pt, color=INK if level_number == 1 else SLATE, font_reference="+mn-lt")
+            set_level_defaults(
+                level,
+                size_pt=size_pt,
+                color=BLACK if level_number == 1 else SLATE,
+                font_reference="+mn-lt",
+                line_spacing=BODY_LINE_SPACING,
+            )
+
+
+def use_body_font_bullets(master):
+    for bullet_font in master.element.iter(qn("a:buFont")):
+        bullet_font.set("typeface", BODY_FONT)
+    for bullet_character in master.element.iter(qn("a:buChar")):
+        bullet_character.set("char", BULLET_CHARACTER)
 
 
 def placeholder_level(placeholder):
@@ -193,28 +249,38 @@ def style_caption_layout(layout):
             set_level_defaults(placeholder_level(placeholder), size_pt=18, color=SLATE, bullets=False)
 
 
-def style_dark_layout(presentation, layout, logos):
-    set_background(layout, DEEP_TEAL)
+def hide_master_graphics(layout):
     layout.element.set("showMasterSp", "0")
+
+
+def style_dark_layout(presentation, layout, background, logos):
+    set_background(layout, background)
+    hide_master_graphics(layout)
     for placeholder in layout.placeholders:
         kind = placeholder_kind(placeholder)
         if kind in ("TITLE", "CENTER_TITLE"):
             set_level_defaults(placeholder_level(placeholder), size_pt=54, color=WHITE, align="l")
         elif kind in ("SUBTITLE", "BODY"):
-            set_level_defaults(placeholder_level(placeholder), size_pt=22, color=BRIGHT_TEAL, align="l", bullets=False)
-    move_picture_to(presentation, layout, logos / LOGO_FILES["white"], Inches(MARGIN), Inches(0.6), Inches(0.42))
+            set_level_defaults(placeholder_level(placeholder), size_pt=22, color=CYAN, align="l", bullets=False)
+    move_picture_to(
+        presentation,
+        layout,
+        logos / logo_for_background(background),
+        Inches(MARGIN),
+        Inches(DARK_LOGO_TOP),
+        Inches(DARK_LOGO_HEIGHT),
+    )
 
 
 def add_master_logo(presentation, logos):
     master = presentation.slide_master
-    logo_height = Inches(0.3)
     move_picture_to(
         presentation,
         master,
-        logos / LOGO_FILES["color"],
-        SLIDE_WIDTH - Inches(2.6),
-        SLIDE_HEIGHT - Inches(0.62),
-        logo_height,
+        logos / logo_for_background(WHITE),
+        SLIDE_WIDTH - Inches(MASTER_LOGO_RIGHT_INSET + logo_width_for_height(MASTER_LOGO_HEIGHT)),
+        SLIDE_HEIGHT - Inches(MASTER_LOGO_BOTTOM_INSET + MASTER_LOGO_HEIGHT),
+        Inches(MASTER_LOGO_HEIGHT),
     )
 
 
@@ -263,12 +329,12 @@ def add_sample_slides(presentation):
 
     number = presentation.slides.add_slide(layouts[TITLE_ONLY])
     number.shapes.title.text = "One number that matters"
-    add_text_box(number, "00%", Inches(0.9), Inches(2.2), Inches(6), Inches(2), 120, DEEP_TEAL, font="+mj-lt")
+    add_text_box(number, "00%", Inches(0.9), Inches(2.2), Inches(6), Inches(2), 120, TEAL, bold=True, font=HEADLINE_FONT)
     add_text_box(number, "Say what the number means and where it comes from.", Inches(0.9), Inches(4.6), Inches(7), Inches(1), 22, SLATE)
 
     quote = presentation.slides.add_slide(layouts[TITLE_ONLY])
     quote.shapes.title.text = "In their words"
-    add_text_box(quote, "“Add a short quote from a founder, mentor or partner.”", Inches(0.9), Inches(2.3), Inches(10.5), Inches(2.2), 36, INK)
+    add_text_box(quote, "“Add a short quote from a founder, mentor or partner.”", Inches(0.9), Inches(2.3), Inches(10.5), Inches(2.2), 36, BLACK)
     add_text_box(quote, "Name, role and company", Inches(0.9), Inches(4.7), Inches(8), Inches(0.6), 18, SLATE)
 
     photo = presentation.slides.add_slide(layouts[PICTURE_WITH_CAPTION])
@@ -281,7 +347,13 @@ def add_sample_slides(presentation):
     closing.shapes.title.text = "Thank you"
     closing.placeholders[1].text = "Your name, email and next step"
     add_text_box(closing, SHORT_BOILERPLATE, Inches(MARGIN), Inches(5.2), Inches(10.5), Inches(0.9), 18, WHITE)
-    add_text_box(closing, closing_contact_line(), Inches(MARGIN), Inches(6.35), Inches(10.5), Inches(0.5), 18, BRIGHT_TEAL)
+    add_text_box(closing, closing_contact_line(), Inches(MARGIN), Inches(6.35), Inches(10.5), Inches(0.5), 18, CYAN)
+
+
+def embed_fonts_on_save(presentation):
+    presentation_element = presentation.part._element
+    presentation_element.set("embedTrueTypeFonts", "1")
+    presentation_element.set("saveSubsetFonts", "0")
 
 
 def build_powerpoint_template(output_directory: Path, logos: Path):
@@ -291,13 +363,17 @@ def build_powerpoint_template(output_directory: Path, logos: Path):
     master = presentation.slide_master
     lay_out_placeholders(presentation)
     style_master_text(master)
+    use_body_font_bullets(master)
     for layout in presentation.slide_layouts:
         reset_layout_text_styles(layout)
     for layout_index in CAPTION_LAYOUTS:
         style_caption_layout(presentation.slide_layouts[layout_index])
     add_master_logo(presentation, logos)
-    for layout_index in DARK_LAYOUTS:
-        style_dark_layout(presentation, presentation.slide_layouts[layout_index], logos)
+    for layout_index, background in DARK_LAYOUT_BACKGROUNDS.items():
+        style_dark_layout(presentation, presentation.slide_layouts[layout_index], background, logos)
+    for layout_index in PHOTO_LAYOUTS:
+        hide_master_graphics(presentation.slide_layouts[layout_index])
+    embed_fonts_on_save(presentation)
     add_sample_slides(presentation)
     presentation.core_properties.title = "Propellant presentation"
     presentation.core_properties.author = "MassChallenge"

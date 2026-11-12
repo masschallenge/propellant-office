@@ -10,7 +10,7 @@ charts: the same rules apply, and this page covers what is different in Google S
 2. In Google Drive, choose **New**, then **File upload**, and pick it.
 3. Open it and choose **File**, then **Save as Google Sheets**. Work in the Google Sheets copy.
 
-The header row and Mist stripes are set as cell formatting, so they come across as they are. Check
+The header row and Warm White stripes are set as cell formatting, so they come across as they are. Check
 the chart once after converting.
 
 If your organization has added Propellant to the Sheets template gallery, choose it from
@@ -21,9 +21,9 @@ If your organization has added Propellant to the Sheets template gallery, choose
 Google Sheets has its own theme for fonts and chart colors.
 
 1. Choose **Format**, then **Theme**.
-2. Choose **Customize** and set the font to **Lato**, the text color to Ink `#1E282B`, and the
-   accents in the Propellant order: Teal `#065E6F`, Yellow `#FFC801`, Slate `#4B575B`, Bright
-   teal `#0FACBD`, Deep teal `#044451` and Gray 300 `#848F92`. Set links to Teal `#065E6F`.
+2. Choose **Customize** and set the font to **Lato**, the text color to Black `#222222`, and the
+   accents in the Propellant order: Teal `#00708E`, Yellow `#FFC801`, Navy `#10263F`, MC Blue
+   `#0EABBC`, Deep Teal `#004F73` and Gray 300 `#848F92`. Set links to Teal `#00708E`.
 
 Charts and new tables then pick up the brand colors. If Lato is not in the font list, add it from
 **More fonts** in the toolbar's font menu first.
@@ -32,13 +32,13 @@ Charts and new tables then pick up the brand colors. If Lato is not in the font 
 
 | Element | Style |
 | --- | --- |
-| Sheet title | Oswald, 24 pt, Deep teal, typed in capitals |
-| Header row | Lato Bold, 11 pt, White on Deep teal `#044451` |
-| Cells | Lato, 11 pt, Ink |
-| Alternate rows | Mist `#F3FBFC` |
+| Sheet title | Oswald SemiBold, 24 pt, Black, typed in capitals |
+| Header row | Lato Bold, 11 pt, White on Navy `#10263F` |
+| Cells | Lato, 11 pt, Black |
+| Alternate rows | Warm White `#F8F8F5` |
 
 To get banded rows on new data, select it and choose **Format**, then **Alternating colors**, then
-set the header to Deep teal and the second color to Mist. You can also use **Format**, then
+set the header to Navy and the second color to Warm White. You can also use **Format**, then
 **Convert to table**, which adds filters and column types.
 
 Freeze the header row with **View**, then **Freeze**, then **1 row**.

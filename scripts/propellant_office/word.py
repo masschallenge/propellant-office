@@ -9,22 +9,24 @@ from docx.oxml.ns import qn
 from docx.shared import Inches, Pt, RGBColor
 
 from .brand import (
+    BLACK,
     BODY_FONT,
+    BODY_LINE_SPACING,
     BUILD_DATE,
     CONTACT_EMAIL,
     COPYRIGHT_LINE,
-    DEEP_TEAL,
     DOCUMENT_STYLES,
     GRAY_100,
-    INK,
-    LOGO_FILES,
-    MIST,
-    PALE_TEAL,
+    NAVY,
     SLATE,
     TEAL,
+    WARM_WHITE,
     WHITE,
+    logo_for_background,
 )
 from .theme import as_template_package, brand_package_themes
+
+HEADER_LOGO_HEIGHT_INCHES = 0.28
 
 
 def set_font_family(run_properties_owner, family):
@@ -111,7 +113,8 @@ def footer_text():
 def add_header_and_footer(document, logos):
     section = document.sections[0]
     header_paragraph = section.header.paragraphs[0]
-    header_paragraph.add_run().add_picture(str(logos / LOGO_FILES["color"]), height=Inches(0.28))
+    header_logo = logos / logo_for_background(WHITE)
+    header_paragraph.add_run().add_picture(str(header_logo), height=Inches(HEADER_LOGO_HEIGHT_INCHES))
     footer_paragraph = section.footer.paragraphs[0]
     footer_paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     style_small_run(footer_paragraph.add_run(footer_text()))
@@ -135,11 +138,11 @@ def add_sample_table(document):
             run = cell.paragraphs[0].add_run(value)
             cell.paragraphs[0].paragraph_format.space_after = Pt(0)
             if row_index == 0:
-                shade_cell(cell, DEEP_TEAL)
+                shade_cell(cell, NAVY)
                 run.font.bold = True
                 run.font.color.rgb = RGBColor.from_string(WHITE)
             elif row_index % 2 == 0:
-                shade_cell(cell, MIST)
+                shade_cell(cell, WARM_WHITE)
 
 
 def add_callout(document, text):
@@ -155,7 +158,7 @@ def add_callout(document, text):
     paragraph_properties.append(border)
     shading = OxmlElement("w:shd")
     shading.set(qn("w:val"), "clear")
-    shading.set(qn("w:fill"), PALE_TEAL)
+    shading.set(qn("w:fill"), WARM_WHITE)
     paragraph_properties.append(shading)
     paragraph.add_run(text)
 
@@ -204,7 +207,8 @@ def build_word_template(output_directory: Path, logos: Path):
         list_style.font.name = BODY_FONT
         set_font_family(list_style.element, BODY_FONT)
         list_style.font.size = Pt(11)
-        list_style.font.color.rgb = RGBColor.from_string(INK)
+        list_style.font.color.rgb = RGBColor.from_string(BLACK)
+        list_style.paragraph_format.line_spacing = BODY_LINE_SPACING
     style_names = {style.name for style in document.styles}
     hyperlink = document.styles["Hyperlink"] if "Hyperlink" in style_names else document.styles.add_style("Hyperlink", WD_STYLE_TYPE.CHARACTER)
     hyperlink.font.color.rgb = RGBColor.from_string(TEAL)

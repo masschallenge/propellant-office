@@ -29,21 +29,22 @@ place on every slide, and screen readers use the title placeholder to name each 
 
 | Layout | Use it for |
 | --- | --- |
-| Title Slide | The first slide. Deep teal, white logo, title in capitals, subtitle in Bright teal. |
+| Title Slide | The first slide. Navy, white logo, title in Oswald SemiBold capitals, subtitle in Cyan. |
 | Title and Content | Most slides: a title and up to five bullets, a chart, a table or a photo. |
-| Section Header | Dividing a long deck into parts. Deep teal, like the title slide. Also the closing slide. |
+| Section Header | Dividing a long deck into parts. Deep Teal, with the white logo and a Cyan subtitle. Also the closing slide. |
 | Two Content | Before and after, or two options side by side. |
 | Comparison | Two options, each with a short heading. |
 | Title Only | A big number, a quote or a diagram you place yourself. |
 | Picture with Caption | One photo filling the left half, with a title and caption on the right. |
-| Blank | A full bleed photo or video. |
+| Blank | A full bleed photo or video. It has no logo, so nothing sits on the photo by accident. |
 
-Use Deep teal slides only for the title, section breaks and the closing slide. Everything in
-between is white, so the Deep teal moments stand out.
+Use the dark slides (Navy and Deep Teal) only for the title, section breaks and the closing slide.
+Everything in between is White, so the dark moments stand out. On a dark slide, text is White and
+accents are Cyan; on a white slide, colored text is Teal.
 
 ## The closing slide
 
-The last sample slide closes the deck on Deep teal. It carries the presenter's name, email and
+The last sample slide closes the deck on Deep Teal. It carries the presenter's name, email and
 next step, the short [About MassChallenge](foundations.md#about-masschallenge) line, and the
 contact and copyright lines: contact@masschallenge.org and © MassChallenge 2026. Keep the About
 line word for word, update the year when it changes, and never add a trademark symbol. A deck
@@ -52,14 +53,17 @@ that goes outside MassChallenge ends with this slide.
 ## Titles
 
 - Make every title say the takeaway: "Applications grew in every program", not "Applications".
-- Keep titles to one line, about 40 characters. The template sets them in Oswald capitals; type
-  them in sentence case and the style does the rest.
+- Keep titles to one line, about 40 characters. The template sets them in Oswald SemiBold
+  capitals with a line spacing of 1.0; type them in sentence case and the style does the rest.
+- For a two tone title, set the lead phrase in Black (White on a dark slide) and the payoff in
+  Teal (Cyan on a dark slide).
 - Give every slide a different title, even if you then hide it. PowerPoint's accessibility
   checker flags a missing title as an error.
 
 ## Text
 
 - One idea per slide. If you need more than five bullets, split the slide.
+- Body text is Lato with a line spacing of 1.5. Never set bullets in Oswald or in capitals.
 - Keep bullets short, without full stops on single lines, and one level deep where you can.
 - Never shrink text below 18 pt to make it fit. Microsoft
   [recommends 18 pt or larger](https://support.microsoft.com/en-us/accessibility/powerpoint/make-your-powerpoint-presentations-accessible-to-people-with-disabilities).
@@ -70,8 +74,10 @@ that goes outside MassChallenge ends with this slide.
 
 The two Title Only samples show how:
 
-- **A big number:** the number in Oswald at about 120 pt in Deep teal, with one line underneath
-  saying what it means and where it comes from. Always give the source.
+- **A big number:** the number in Oswald Bold at about 120 pt in Teal (Cyan on a dark slide), with
+  one line underneath saying what it means and where it comes from. Always give the source.
+  Oswald Bold is only for numbers like this. A single short Yellow rule can sit with the number as
+  the deck's one warm accent; never color a number Raspberry.
 - **A quote:** the quote in Lato at about 36 pt with real curly quote marks, and the person's
   name, role and company below in Slate. Only quote people who agreed to be quoted.
 
@@ -90,19 +96,29 @@ The two Title Only samples show how:
   Blank slide.
 - When you crop, crop on purpose: keep faces and heads whole and leave the people looking into
   the slide. Use **Picture Format**, then **Crop**, then **Fill**, and drag the photo to place it.
-- Put text on a photo only over a calm, dark area, or on a Deep teal band. Use the white logo on
-  dark photos.
+- Put text on a photo only over a calm, high contrast area. Otherwise move it, add the hero
+  overlay, or set it on a solid Navy, Black or Deep Teal block, as the
+  [photography guide](photography.md#color-treatment) explains. Use the white logo on dark photos.
 - For video, insert the file or a link with **Insert**, then **Video**, add captions, and set it
   to start when clicked, not automatically.
 - Follow the [photography guide](photography.md), including alt text for every photo.
 
 ## The logo
 
-The template places the logo for you: the white logo at the top left of Deep teal slides and the
-full color logo at the bottom right of white slides. Do not add another logo, and do not move it
-into the content area. On a full bleed photo slide, the full color logo can disappear into the
-photo: right click the slide, choose **Format Background**, check **Hide background graphics**, and
-place the white logo from [`assets/logos`](../assets/logos) in a dark corner instead.
+The template places the logo for you: the white logo at the top left of the Navy and Deep Teal
+slides and the full color logo at the bottom right of white slides, each with clear space equal to
+the height of the "M" in the wordmark. Do not add another logo, and do not move it into the
+content area.
+
+- The full color logo goes only on White or Warm White. The white logo goes on Navy, Black, Deep
+  Teal, Teal, MC Blue or a photo with enough contrast, never on Cyan, Yellow or Lime.
+- The Blank layout has no logo. On a full bleed photo, place the white logo from
+  [`assets/logos`](../assets/logos) in a calm, dark corner, adding the hero overlay or a solid
+  Navy block behind it if the photo is busy.
+- On a sponsor slide or a banner, keep the horizontal logo at least 160 px wide on screen, and
+  align it to a corner or the top edge.
+- Never recolor, stretch, rotate or add effects to the logo, and never build a lockup with a
+  partner's logo. Ask MassChallenge Marketing for partner lockups.
 
 ## Presenting and sharing
 
@@ -110,13 +126,17 @@ place the white logo from [`assets/logos`](../assets/logos) in a dark corner ins
 2. Check the reading order of busy slides in the **Reading Order** pane.
 3. To send the deck to someone outside MassChallenge, send a PDF, or
    [embed the fonts](foundations.md#sending-files-outside-masschallenge) if they need to edit it.
+   The template has **Embed fonts in the file** turned on already; check it once in **File**,
+   **Options**, **Save** before you send a deck that did not start from the template.
 4. Before presenting on someone else's computer, check that Lato and Oswald are installed there,
    or bring a PDF.
 
 ## Things to avoid
 
 - Animations other than a simple Appear or Fade, and slide transitions other than Fade.
-- Text in Teal, except links, and Teal text on Deep teal.
+- Teal text on Navy, MC Blue text anywhere, and Cyan text on a white slide.
+- More than one warm accent in a deck, or a warm accent as a large background.
 - Logos, icons or photos copied from a web search.
-- Busy backgrounds, gradients, shadows and outlines on text.
+- Busy backgrounds, shadows and outlines on text. The only gradient is the MC Gradient, from Navy
+  to Ocean.
 - Slides read word for word. If the slide says it all, the presenter has nothing to add.
