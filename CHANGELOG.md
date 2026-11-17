@@ -39,7 +39,9 @@ the approved figures are unchanged.
 - The photography guide adopts the brand guide's imagery and video direction: the overlay, full
   color and accent rescue treatments, the hero overlay, warmth in every image, what to avoid,
   licensed stock that MassChallenge holds a license for, the standard slates and lower thirds.
-  The teal duotone is retired.
+  The teal duotone is retired. The hero overlay is not a fix for text contrast: text goes on it
+  only where the photo is already dark, and must still reach 4.5:1, matching Propellant for the
+  web.
 - The CMYK values are approximate until confirmed with a printer's proof.
 
 ### Added

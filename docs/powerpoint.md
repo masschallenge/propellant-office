@@ -96,9 +96,10 @@ The two Title Only samples show how:
   Blank slide.
 - When you crop, crop on purpose: keep faces and heads whole and leave the people looking into
   the slide. Use **Picture Format**, then **Crop**, then **Fill**, and drag the photo to place it.
-- Put text on a photo only over a calm, high contrast area. Otherwise move it, add the hero
-  overlay, or set it on a solid Navy, Black or Deep Teal block, as the
-  [photography guide](photography.md#color-treatment) explains. Use the white logo on dark photos.
+- Put text on a photo only over a calm, high contrast area. The hero overlay is too thin to make
+  text readable on a bright part of a photo, so use it only where the text side is already dark,
+  and otherwise move the text or set it on a solid Navy, Black or Deep Teal block, as the
+  [photography guide](photography.md#text-and-the-logo-on-photos) explains. Use the white logo on dark photos.
 - For video, insert the file or a link with **Insert**, then **Video**, add captions, and set it
   to start when clicked, not automatically.
 - Follow the [photography guide](photography.md), including alt text for every photo.

@@ -131,8 +131,11 @@ heavy.
 
 ### Text and the logo on photos
 
-- Put text on a photo only over a calm, high contrast area. Otherwise move the text, add the hero
-  overlay, or set the text on a solid Navy, Black or Deep Teal block beside or over the photo.
+- Put text on a photo only over a calm, high contrast area. The hero overlay cannot fix contrast
+  on its own: at 15 to 30 percent it barely darkens a bright area, so White text there stays near
+  2:1. Use the overlay only where the text side of the photo is already dark and calm, and check
+  the text reaches 4.5:1 (3:1 for large titles). Otherwise move the text, or set it on a solid
+  Navy, Black or Deep Teal block beside or over the photo.
 - Use the white logo on a photo only where there is enough contrast. On a busy photo, add the hero
   overlay or a solid color block behind the logo. The full color logo goes only on White or Warm
   White.
@@ -183,7 +186,8 @@ show them whole, and crop only in the way the person chose.
 - **Lower thirds** are the same in every video: a Navy block with a Cyan rule, the name in Oswald
   SemiBold and the title in Lato, at the bottom left inside the title safe area.
 - **Text on screen** follows the type rules: Oswald capitals for a short title, Lato for
-  everything else, White on Navy, Black or Deep Teal, or on the hero overlay.
+  everything else, White on Navy, Black or Deep Teal, or on a dark, calm part of the frame under
+  the hero overlay.
 - **Music and footage need licenses too.** Use only footage MassChallenge has licensed or shot
   itself, and only licensed music, and keep the license records.
 - **No autoplay with sound.** In slides and on web pages, set videos to play when clicked. A muted
@@ -211,6 +215,6 @@ Before you use a photo or video, check:
 - [ ] It is sharp, large enough and cropped on purpose.
 - [ ] It is full color, has the thin hero overlay, or sits in the hexagon network frame, with no
       filters, no black and white and no duotone.
-- [ ] Text and the logo sit on a calm, high contrast area, the hero overlay, or a Navy, Black or
-      Deep Teal block.
+- [ ] Text and the logo sit on a calm, high contrast area or a Navy, Black or Deep Teal block. Text
+      on the hero overlay sits on an area that was already dark, and reaches 4.5:1.
 - [ ] It has alt text, and video has captions, the standard slates and lower thirds.
