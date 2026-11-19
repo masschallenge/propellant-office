@@ -120,7 +120,7 @@ class BuiltTemplates(unittest.TestCase):
             for theme in themes:
                 for slot, color in THEME_COLORS.items():
                     self.assertRegex(theme, rf'<a:{slot}><a:srgbClr val="{color}"/>', f"{path.name} {slot}")
-                self.assertIn(f'<a:majorFont><a:latin typeface="{HEADLINE_FONT}"/>', theme)
+                self.assertIn(f'<a:majorFont><a:latin typeface="{HEADLINE_SEMIBOLD_FONT}"/>', theme)
                 self.assertIn(f'<a:minorFont><a:latin typeface="{BODY_FONT}"/>', theme)
 
     def test_template_files_declare_template_content_types(self):
@@ -146,7 +146,7 @@ class BuiltTemplates(unittest.TestCase):
         [master] = read_entry(self.output / "propellant-presentation.pptx", r"slideMasters/slideMaster1\.xml$")
         title_style = re.search(r"<p:titleStyle>.*?</p:titleStyle>", master, re.S).group(0)
         self.assertIn('cap="all"', title_style)
-        self.assertIn(f'typeface="{HEADLINE_SEMIBOLD_FONT}"', title_style)
+        self.assertIn('typeface="+mj-lt"', title_style)
         self.assertIn('<a:lnSpc><a:spcPct val="100000"/></a:lnSpc>', title_style)
         self.assertIn(f'<a:srgbClr val="{BLACK}"/>', title_style)
         body_style = re.search(r"<p:bodyStyle>.*?</p:bodyStyle>", master, re.S).group(0)

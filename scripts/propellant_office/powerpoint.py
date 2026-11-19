@@ -22,7 +22,6 @@ from .brand import (
     DEEP_TEAL,
     DISPLAY_LINE_SPACING,
     HEADLINE_FONT,
-    HEADLINE_SEMIBOLD_FONT,
     NAVY,
     SHORT_BOILERPLATE,
     SLATE,
@@ -167,7 +166,7 @@ def style_master_text(master):
         size_pt=40,
         color=BLACK,
         caps=True,
-        font_reference=HEADLINE_SEMIBOLD_FONT,
+        font_reference="+mj-lt",
         align="l",
         line_spacing=DISPLAY_LINE_SPACING,
     )

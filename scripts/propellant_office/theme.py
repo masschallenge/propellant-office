@@ -2,7 +2,7 @@ import re
 import zipfile
 from io import BytesIO
 
-from .brand import BODY_FONT, BUILD_DATE, HEADLINE_FONT, THEME_COLORS, THEME_NAME
+from .brand import BODY_FONT, BUILD_DATE, HEADLINE_SEMIBOLD_FONT, THEME_COLORS, THEME_NAME
 
 DRAWINGML = "http://schemas.openxmlformats.org/drawingml/2006/main"
 
@@ -30,7 +30,7 @@ def color_scheme_xml():
 
 
 def font_scheme_xml():
-    major = f'<a:majorFont><a:latin typeface="{HEADLINE_FONT}"/><a:ea typeface=""/><a:cs typeface=""/></a:majorFont>'
+    major = f'<a:majorFont><a:latin typeface="{HEADLINE_SEMIBOLD_FONT}"/><a:ea typeface=""/><a:cs typeface=""/></a:majorFont>'
     minor = f'<a:minorFont><a:latin typeface="{BODY_FONT}"/><a:ea typeface=""/><a:cs typeface=""/></a:minorFont>'
     return f'<a:fontScheme name="{THEME_NAME}">{major}{minor}</a:fontScheme>'
 
