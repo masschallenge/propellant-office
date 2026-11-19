@@ -340,8 +340,13 @@ class LogoRules(unittest.TestCase):
             self.assertEqual(logo_for_background(background), LOGO_FILES["white"])
         self.assertEqual(logo_for_background(NAVY, mark="monogram"), LOGO_FILES["monogram_white"])
 
-    def test_no_logo_on_light_or_warm_accent_colors(self):
-        for background in (CYAN, YELLOW, LIME, ORANGE, RASPBERRY, MC_GRAY):
+    def test_black_logo_on_light_accent_colors(self):
+        for background in (CYAN, YELLOW, LIME):
+            self.assertEqual(logo_for_background(background), LOGO_FILES["black"])
+        self.assertEqual(logo_for_background(YELLOW, mark="monogram"), LOGO_FILES["monogram_black"])
+
+    def test_no_logo_on_unapproved_colors(self):
+        for background in (ORANGE, RASPBERRY, MC_GRAY):
             with self.assertRaises(ValueError):
                 logo_for_background(background)
 

@@ -135,6 +135,7 @@ LOGO_FILES = {
 
 FULL_COLOR_LOGO_BACKGROUNDS = (WHITE, WARM_WHITE)
 WHITE_LOGO_BACKGROUNDS = (NAVY, BLACK, DEEP_TEAL, TEAL, MC_BLUE)
+BLACK_LOGO_BACKGROUNDS = (CYAN, YELLOW, LIME)
 
 HORIZONTAL_LOGO_PIXELS = (1671, 225)
 WORDMARK_M_HEIGHT_PIXELS = 91
@@ -150,6 +151,8 @@ def logo_for_background(background, mark="horizontal"):
         treatment = "color"
     elif background in WHITE_LOGO_BACKGROUNDS:
         treatment = "white"
+    elif background in BLACK_LOGO_BACKGROUNDS:
+        treatment = "black"
     else:
         raise ValueError(f"No approved logo treatment for a #{background} background")
     return LOGO_FILES[treatment if mark == "horizontal" else f"{mark}_{treatment}"]
