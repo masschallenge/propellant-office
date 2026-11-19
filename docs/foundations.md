@@ -5,8 +5,9 @@ like it came from the same team that built our website. This page sets the share
 guides for each app show you where to find the settings, and the templates have everything set up
 already.
 
-The rules come straight from Propellant, so a document and the website use the same colors, fonts
-and voice.
+The visual rules come from the MassChallenge brand guidelines, which MassChallenge Marketing owns.
+Propellant applies them, so a document and the website use the same colors, fonts, logo and
+voice. Ask MassChallenge Marketing about anything this page does not cover.
 
 ## Start from a template
 
@@ -29,13 +30,31 @@ administrator can share them with everyone.
 
 | Font | Use it for | Where |
 | --- | --- | --- |
-| Lato | All text: body text, headings, tables, labels and captions. On the web and in our products it is called Propellant Sans. | Documents, slides, sheets, email and product screens |
-| Oswald | Display headlines only: a document title, a slide title or a sheet title. Always in capitals. | Documents, slides, social graphics and public web pages. Never inside signed in product screens |
+| Oswald | Headlines and subheads, always in capitals: a document title and its main headings, a slide title, a sheet title, an eyebrow above a headline, a big number. | Documents, slides, sheets, social graphics, video and public web pages. Never inside signed in product screens |
+| Lato | Reading text: body text, bullets, tables, labels and captions. On the web and in our products it is called Propellant Sans. | Documents, slides, sheets, email and product screens |
+
+Gotham, Bebas, Arial, Montserrat and Open Sans are retired. Do not use them in anything new.
+
+### Weights and spacing
+
+| Style | Font | Notes |
+| --- | --- | --- |
+| Headline | Oswald SemiBold, capitals | Line spacing 1.0. Two tone option: the lead phrase in Black (White on dark), the payoff in Teal (Cyan on dark). |
+| Subhead | Oswald SemiBold, capitals, smaller | Headings inside a document, card titles, numbered blocks and section labels. |
+| Eyebrow or tag | Oswald Regular, capitals | Letter spacing of 0.3 em (300 tracking). Above a headline, on tags, labels and footers. |
+| Body | Lato Regular | Line spacing 1.5. Lato Bold for emphasis. |
+| Big number | Oswald Bold | Numbers at display size only. The only place Oswald Bold is used. |
 
 Oswald is a narrow, condensed font. It is made for short, large headlines and is hard to read in
-long text, so never use it for paragraphs, bullets or table text.
+long text, so never use it, or capitals, for paragraphs, bullets or table text.
 
-In email, Lato falls back to Arial, Helvetica, sans-serif for anyone who does not have it.
+### When Oswald or Lato is not there
+
+The brand guide's fallback, when Oswald or Lato will not load in an Office file or an email, is
+Aptos Narrow Bold, in capitals, for headers and Aptos for body text. Never Arial. In email, set
+Lato with Aptos as the fallback.
+
+The fallback is for the rare case. Every staff computer should have Oswald and Lato installed.
 
 ### Getting the fonts
 
@@ -50,6 +69,9 @@ Both fonts are free, open source fonts from [Google Fonts](https://fonts.google.
   and install them yourself. A Microsoft 365 administrator can also
   [publish them as organization fonts](https://learn.microsoft.com/en-us/sharepoint/support-for-organization-fonts-in-powerpoint-for-the-web)
   so they work in Office on the web.
+- **Install every Oswald weight.** The templates set headlines in Oswald SemiBold and big numbers
+  in Oswald Bold. If a title shows in another font, the SemiBold weight is not installed on that
+  computer.
 
 If a computer does not have the fonts, Office swaps in another font and the layout can shift.
 
@@ -65,44 +87,68 @@ file that someone else will open:
   [Microsoft explains embedding](https://support.microsoft.com/en-us/office/benefits-of-embedding-custom-fonts-cb3982aa-ea76-4323-b008-86670f222dbc).
   Embedded fonts do not show in Office on the web, and Excel cannot embed fonts.
 
+The PowerPoint template already has **Embed fonts in the file** turned on, with "Embed only the
+characters used" off, so a deck made from it carries Oswald and Lato whenever it is saved on a
+computer that has them. Check the setting once in **File**, **Options**, **Save** before you send a
+deck.
+
 ## Color
 
-The Propellant palette is the same everywhere: on the web, in Office and Google files, and in
-print.
+The colors come from the MassChallenge brand guidelines, which MassChallenge Marketing owns.
+Propellant applies them to documents, slides and sheets. The core colors are locked. The
+supporting blues and the warm accents are reviewed with each version of the brand guide.
 
-### The palette
+### Core colors
 
-| Name | Hex | RGB | Print CMYK | Use it for |
-| --- | --- | --- | --- | --- |
-| Deep teal | `#044451` | 4 68 81 | 100 64 53 50 | Title slides, section slides, table headers, cover pages |
-| Teal | `#065E6F` | 6 94 111 | 100 55 45 24 | Links, actions and the first chart series |
-| Mid teal | `#068DA4` | 6 141 164 | 87 31 31 2 | A supporting accent for shapes and icons |
-| Bright teal | `#0FACBD` | 15 172 189 | 78 11 26 0 | Accents and large text on Deep teal |
-| Pale teal | `#D9F6FA` | 217 246 250 | 13 0 2 0 | Callout boxes and highlighted rows |
-| Mist | `#F3FBFC` | 243 251 252 | 3 0 1 0 | Alternate rows and quiet panels |
-| Magenta | `#BF0261` | 191 2 97 | 21 100 42 5 | Things that are wrong or late, used sparingly |
-| Yellow | `#FFC801` | 255 200 1 | 0 22 100 0 | Highlights, always with Ink text |
-| Ink | `#1E282B` | 30 40 43 | 81 66 63 83 | Body text and headings |
-| Slate | `#4B575B` | 75 87 91 | 73 57 55 35 | Secondary text |
-| White | `#FFFFFF` | 255 255 255 | 0 0 0 0 | Page and slide backgrounds |
+| Name | Hex | RGB | CMYK (approximate) | Print substitute | Use it for |
+| --- | --- | --- | --- | --- | --- |
+| MC Blue | `#0EABBC` | 14 171 188 | 93 9 0 26 | | The logo and graphic shapes. Never text. |
+| MC Gray | `#808285` | 128 130 133 | 4 2 0 48 | | The logo only |
+| Navy | `#10263F` | 16 38 63 | 75 40 0 75 | | Dark sections, title slides, table headers and gradients |
+| Black | `#222222` | 34 34 34 | 0 0 0 87 | | Body text, headlines and dark sections |
+| Warm White | `#F8F8F5` | 248 248 245 | 0 0 1 3 | | Light sections, table stripes and callouts |
+
+### Supporting blues
+
+| Name | Hex | RGB | CMYK (approximate) | Print substitute | Use it for |
+| --- | --- | --- | --- | --- | --- |
+| Deep Teal | `#004F73` | 0 79 115 | 100 31 0 55 | | Dark sections, such as section slides |
+| Teal | `#00708E` | 0 112 142 | 100 21 0 44 | | Headings and links on light backgrounds. Colored text on a light background is always Teal. |
+| Cyan | `#54EEFF` | 84 238 255 | 100 11 0 9 | `#00CFE8` | Text and accents on dark backgrounds only: Navy, Black or Deep Teal |
+| Ocean | `#037AA6` | 3 122 166 | n/a | | A gradient stop only, never a flat fill |
+
+The MC Gradient runs from Navy `#10263F` to Ocean `#037AA6`, at any angle.
+
+### Warm accents
+
+Use one warm accent per piece, in small doses: a word, a tag, a rule or a number. Never as a large
+background.
+
+| Name | Hex | RGB | CMYK (approximate) | Print substitute | Use it for |
+| --- | --- | --- | --- | --- | --- |
+| Yellow | `#FFC801` | 255 200 1 | 0 22 100 0 | | Tags, rules and numbers, with dark text on it |
+| Orange | `#FF6B35` | 255 107 53 | 0 47 73 4 | `#F58242` | Accents with dark text only, never white |
+| Raspberry | `#D14170` | 209 65 112 | 0 73 41 15 | `#D83B80` | Shapes and rules on dark backgrounds |
+| Lime | `#C6F135` | 198 241 53 | 32 0 74 17 | `#91D438` | Accents on dark backgrounds |
 
 ### Supporting neutrals
 
-Two grays from Propellant support the palette in lines and charts.
+These neutrals from Propellant support the palette in pages, lines and charts. They are not brand
+colors.
 
-| Name | Hex | RGB | Print CMYK | Use it for |
-| --- | --- | --- | --- | --- |
-| Gray 100 | `#DBE1E3` | 219 225 227 | 13 7 8 0 | Rules and table lines |
-| Gray 300 | `#848F92` | 132 143 146 | 53 38 39 4 | The sixth chart color, such as comparison data |
-
-The logo artwork has two colors of its own, Logo gray `#828486` (CMYK 53 44 43 7) and Logo teal
-`#17ACBC` (CMYK 77 11 27 0). Use them only in the logo, never for text, shapes or charts.
+| Name | Hex | RGB | CMYK (approximate) | Print substitute | Use it for |
+| --- | --- | --- | --- | --- | --- |
+| White | `#FFFFFF` | 255 255 255 | 0 0 0 0 | | Page and slide backgrounds |
+| Light tint | `#F3FAFC` | 243 250 252 | n/a | | A pale panel or pattern on a light page |
+| Slate | `#4B575B` | 75 87 91 | 73 57 55 35 | | Secondary text, such as a subtitle, a source or a caption |
+| Gray 100 | `#DBE1E3` | 219 225 227 | 13 7 8 0 | | Rules and table lines |
+| Gray 300 | `#848F92` | 132 143 146 | 53 38 39 4 | | The sixth chart color, such as comparison data |
 
 ### Printing
 
-The CMYK values are calculated from the sRGB values with the Artifex CMYK SWOP profile (US web
-coated), relative colorimetric intent, rounded to whole percent. Check a printed proof before a
-large run.
+The CMYK values are approximate until they are confirmed with a printer's proof, as the brand
+guide says. Where a color has a print substitute, use the substitute in print. Check a printed
+proof before a large run.
 
 ### The theme
 
@@ -112,58 +158,84 @@ row, never from "More colors", and your file stays on brand even if the theme is
 
 | Theme slot | Name | Hex |
 | --- | --- | --- |
-| Dark 1 (text) | Ink | `#1E282B` |
+| Dark 1 (text) | Black | `#222222` |
 | Light 1 (background) | White | `#FFFFFF` |
-| Dark 2 | Deep teal | `#044451` |
-| Light 2 | Mist | `#F3FBFC` |
-| Accent 1 | Teal | `#065E6F` |
+| Dark 2 | Navy | `#10263F` |
+| Light 2 | Warm White | `#F8F8F5` |
+| Accent 1 | Teal | `#00708E` |
 | Accent 2 | Yellow | `#FFC801` |
-| Accent 3 | Slate | `#4B575B` |
-| Accent 4 | Bright teal | `#0FACBD` |
-| Accent 5 | Deep teal | `#044451` |
+| Accent 3 | Navy | `#10263F` |
+| Accent 4 | MC Blue | `#0EABBC` |
+| Accent 5 | Deep Teal | `#004F73` |
 | Accent 6 | Gray 300 | `#848F92` |
-| Hyperlink | Teal | `#065E6F` |
-| Followed hyperlink | Deep teal | `#044451` |
+| Hyperlink | Teal | `#00708E` |
+| Followed hyperlink | Deep Teal | `#004F73` |
 
-Pale teal, Mid teal, Magenta and Gray 100 sit outside the theme on purpose. Magenta stays out so
-it never ends up in a chart or a decoration by accident.
+Why this mapping:
 
-### Using color
+- **Dark 1 and Light 1** are the text and the page: Black text on White, as the brand guide sets
+  for body text.
+- **Dark 2 and Light 2** are the dark and light sections: Navy, the main dark section color, and
+  Warm White, the light section color.
+- **The six accents** are the chart colors in order, because Office and Google color chart series
+  from the accents. Teal leads, so a one series chart is Teal. MC Blue appears only as a shape
+  here, never as text.
+- **The hyperlink** is Teal, the color of links on light backgrounds.
 
-- Most of the page is White and the neutrals, with Ink text. Teals are for brand surfaces and
-  actions, and Magenta and Yellow are used only a little.
-- Use Deep teal for big brand moments: a title slide, a section divider, a cover. On Deep teal use
-  White text and Bright teal accents, never Teal text.
-- Keep headings in Ink. Teal is for links and things people can click.
-- Never show meaning with color alone. Pair every status color with a word, such as On track or
-  Late.
-- Keep text readable: a contrast ratio of at least 4.5:1 with its background, as the
-  [WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum) require. These pairings pass:
+Cyan, Ocean, MC Gray, the other warm accents and the neutrals sit outside the theme on purpose.
+Cyan works only on dark backgrounds, Ocean only in a gradient and MC Gray only in the logo, so
+keeping them out of the theme row stops them landing on a white page by accident.
 
-  | Text | Background | Contrast |
-  | --- | --- | --- |
-  | Ink | White, Mist or Pale teal | 13.3:1 or more |
-  | Ink | Yellow | 9.7:1 |
-  | Slate | White or Mist | 7.1:1 or more |
-  | Teal | White or Mist | 7.0:1 or more |
-  | Magenta | White or Mist | 5.9:1 or more |
-  | White | Deep teal | 10.8:1 |
-  | White | Teal | 7.4:1 |
-  | Bright teal | Deep teal | 3.9:1, so only for text 18 pt or larger |
+### Rules of use
 
-  Bright teal, Mid teal, Yellow and Gray 300 are too light for text on White.
+- Most of the page is White or Warm White with Black text. Navy, Black and Deep Teal are for dark
+  sections: a title slide, a section divider, a cover.
+- On a light background, colored text is always Teal. MC Blue is for the logo and shapes, never
+  text.
+- Use Cyan only on Navy, Black or Deep Teal.
+- Use one warm accent per piece, small. Never as a large background.
+- Orange takes dark text, never white.
+- Ocean appears only in the MC Gradient, never as a flat fill.
+- For print, use the print substitute where one exists.
+- Status is separate. Raspberry, Orange and Lime are decorative brand accents and never mean
+  status. Propellant's interface status colors, such as the error magenta, are never used as
+  decoration. Pair every status color with a word, such as On track or Late.
+
+### Approved pairings
+
+Keep text readable: a contrast ratio of at least 4.5:1 with its background, as the
+[WCAG guidelines](https://www.w3.org/TR/WCAG21/#contrast-minimum) require. These pairings are
+verified:
+
+| Text | Background | Contrast |
+| --- | --- | --- |
+| Cyan | Navy | 11.0:1 |
+| White | Black | 15.9:1 |
+| Teal | White | 5.7:1 |
+| White | Deep Teal | 8.9:1 |
+| Navy | Warm White | 14.4:1 |
+| Lime | Navy | 11.7:1 |
+| White | Navy | 15.3:1 |
+| White | Teal | 5.7:1 |
+| Black | Yellow | 10.2:1 |
+| Black | Orange | 5.6:1 |
+| Cyan | Deep Teal | 6.4:1 |
+
+Never use these for text: White on MC Blue (2.8:1), MC Blue on White (2.8:1), Teal on Navy
+(2.7:1) and White on Orange (2.8:1).
 
 ### Charts
 
 - A chart with one series uses Teal. Most charts need only one.
-- Charts take their colors from the theme in this order: Teal, Yellow, Slate, Bright teal, Deep
-  teal, Gray 300. Do not recolor series by hand.
-- Label the series directly on the chart, not only in a legend. Yellow, Bright teal and Gray 300
-  are light against White, so labels are what make them readable, and they help anyone who
-  cannot tell the colors apart.
+- Charts take their colors from the theme in this order: Teal, Yellow, Navy, MC Blue, Deep Teal,
+  Gray 300. Do not recolor series by hand.
+- Label the data directly on the chart, not only in a legend. Yellow, MC Blue and Gray 300 are
+  light against White, so labels are what make them readable, and they help anyone who cannot
+  tell the colors apart.
 - Keep to four series or fewer. Fold the rest into Other, or split the chart.
 - Use one value axis. Two measures on different scales belong in two charts.
-- Never use Magenta for a series: it means something is wrong.
+- Keep Orange, Raspberry and Lime out of charts, and never use a status color for a series.
+- In a timeline, color the dots in the chart order and let the words carry the meaning.
 
 ## Type styles
 
@@ -175,21 +247,23 @@ organized.
 
 | Style | Font | Size | Color | Notes |
 | --- | --- | --- | --- | --- |
-| Title | Oswald | 32 pt | Deep teal | Capitals, once per document |
+| Title | Oswald SemiBold | 32 pt | Black | Capitals, line spacing 1.0, once per document |
 | Subtitle | Lato | 14 pt | Slate | |
-| Heading 1 | Lato Bold | 20 pt | Ink | Sections |
-| Heading 2 | Lato Bold | 15 pt | Ink | Parts of a section |
-| Heading 3 | Lato Bold | 12.5 pt | Ink | Rarely needed |
-| Normal | Lato | 11 pt | Ink | Line spacing 1.4, 8 pt after each paragraph |
+| Heading 1 | Oswald SemiBold | 18 pt | Teal | Capitals, line spacing 1.0. Sections |
+| Heading 2 | Oswald SemiBold | 14 pt | Black | Capitals, line spacing 1.0. Parts of a section |
+| Heading 3 | Lato Bold | 12 pt | Black | Sentence case. Rarely needed |
+| Normal | Lato | 11 pt | Black | Line spacing 1.5, 8 pt after each paragraph |
 
 ### Slides (PowerPoint and Google Slides)
 
 | Style | Font | Size | Color |
 | --- | --- | --- | --- |
-| Title on a white slide | Oswald, capitals | 40 pt | Ink |
-| Title on a Deep teal slide | Oswald, capitals | 54 pt | White |
-| Body, first level | Lato | 24 pt | Ink |
-| Body, second level | Lato | 20 pt | Slate |
+| Title on a white slide | Oswald SemiBold, capitals, line spacing 1.0 | 40 pt | Black |
+| Title on a Navy or Deep Teal slide | Oswald SemiBold, capitals, line spacing 1.0 | 54 pt | White |
+| Subtitle on a Navy or Deep Teal slide | Lato | 22 pt | Cyan |
+| Body, first level | Lato, line spacing 1.5 | 24 pt | Black |
+| Body, second level | Lato, line spacing 1.5 | 20 pt | Slate |
+| Big number | Oswald Bold | about 120 pt | Teal (Cyan on dark) |
 | Smallest text, such as a source | Lato | 18 pt | Slate |
 
 Microsoft [recommends 18 pt or larger](https://support.microsoft.com/en-us/accessibility/powerpoint/make-your-powerpoint-presentations-accessible-to-people-with-disabilities)
@@ -199,34 +273,75 @@ for slide text. Never go smaller.
 
 | Style | Font | Size | Color |
 | --- | --- | --- | --- |
-| Sheet title | Oswald, capitals | 24 pt | Deep teal |
-| Header row | Lato Bold | 11 pt | White on Deep teal |
-| Cells | Lato | 11 pt | Ink, with Mist stripes |
+| Sheet title | Oswald SemiBold, capitals | 24 pt | Black |
+| Header row | Lato Bold | 11 pt | White on Navy |
+| Cells | Lato | 11 pt | Black, with Warm White stripes |
 
 ### Case
 
-Only Oswald titles are in capitals. Everything else, headings and table headers included, is in
+Oswald headlines, subheads and eyebrows are in capitals. In Word and PowerPoint the styles add the
+capitals, so type them in sentence case. Everything in Lato, table headers included, is in
 sentence case: a capital first letter and lower case after it, except for names.
 
 ## The logo
 
-Use the logo files in [`assets/logos`](../assets/logos), never a copy from a website or an old
-file.
+The logo rules come from the MassChallenge brand guidelines. Use the logo files in
+[`assets/logos`](../assets/logos), never a copy from a website or an old file.
+
+### Versions
+
+- **Vertical** is the default for most layouts. Propellant does not ship it: ask MassChallenge
+  Marketing for the vertical files, and never draw or assemble your own.
+- **Horizontal** is for when width is plentiful and height is tight: headers, footers, sponsor
+  slides and banners. This is the logo the templates use.
+- **MC mark** (the monogram) is for places where the audience already knows us, such as a small
+  icon or a profile picture.
+- **Local logos** are for work tied to one site: the city for US sites and the country for
+  international sites. Approved local logos exist for Boston, Israel, UK and Switzerland, and
+  Dallas is not produced yet. Ask MassChallenge Marketing for them, and never type a location next
+  to the logo.
+
+The logo colors are MC Blue `#0EABBC` and MC Gray `#808285`. The files in `assets/logos` will be
+replaced with updated official artwork when MassChallenge Marketing supplies it. Never recolor
+them yourself.
+
+### Which logo on which background
 
 | Background | Logo |
 | --- | --- |
-| White or a light color | Full color: `masschallenge-logo-horizontal-color.png` |
-| Deep teal, a dark color or a dark photo | White: `masschallenge-logo-horizontal-white.png` |
-| One color printing | Black: `masschallenge-logo-horizontal-black.png` |
+| White or Warm White | Full color: `masschallenge-logo-horizontal-color.png` |
+| Navy, Black, Deep Teal, Teal, MC Blue, or a photo with enough contrast | White: `masschallenge-logo-horizontal-white.png` |
+| One color printing, or a light background the full color logo does not suit | Black: `masschallenge-logo-horizontal-black.png` |
 
-- Put the logo once per page or slide, in a corner. The templates place it for you.
-- Leave clear space around it equal to half its height.
-- Never stretch, recolor, outline or redraw it, and never put the full color logo on Deep teal.
-- In a document, keep the horizontal logo at least a third of an inch (8 mm) tall so the wordmark
-  stays readable. Use the MC monogram alone only where MassChallenge is already named.
+- Use the full color logo only on White or Warm White.
+- Never put the white logo on a light color such as Cyan, Yellow or Lime.
+- On a busy photo, add the hero overlay or a solid color block behind the logo, as the
+  [photography guide](photography.md#color-treatment) explains.
+
+### Clear space and size
+
+- Leave clear space on every side equal to the height of the "M" in the MASSCHALLENGE wordmark.
+  On the horizontal logo that is about two fifths of the logo's height. Nothing enters it: no
+  type, images, page edges or other logos.
+- Align the horizontal logo to a corner or the top edge of its area. Put it once per page or
+  slide. The templates place it for you.
+- Keep the logo at least this big:
+
+  | Version | On screen | In print |
+  | --- | --- | --- |
+  | Vertical | 60 px wide | 20 mm wide |
+  | Horizontal | 160 px wide | 30 mm wide |
+  | MC mark | 16 px tall | 8 mm |
+
+### Never
+
+Never recolor, stretch, rotate, outline, flip, crop, rearrange, rebuild or retype the logo, and
+never add effects. Never create a new lockup or sub logo. Only MassChallenge Marketing creates
+program lockups and partner lockups.
 
 The [brand guidelines](https://github.com/masschallenge/propellant-web/blob/main/docs/brand.md)
-have the full logo rules.
+in Propellant for the web summarize the full logo rules. For anything they do not cover, ask
+MassChallenge Marketing.
 
 ## Layout
 
